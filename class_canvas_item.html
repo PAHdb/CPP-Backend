@@ -5,7 +5,7 @@
 <meta http-equiv="X-UA-Compatible" content="IE=9"/>
 <meta name="generator" content="Doxygen 1.9.1"/>
 <meta name="viewport" content="width=device-width, initial-scale=1"/>
-<title>NAPISD: Member List</title>
+<title>NAPISD: CanvasItem Class Reference</title>
 <link href="tabs.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="jquery.js"></script>
 <script type="text/javascript" src="dynsections.js"></script>
@@ -63,22 +63,61 @@ $(function() {
 
 </div><!-- top -->
 <div class="header">
+  <div class="summary">
+<a href="#pub-types">Public Types</a> &#124;
+<a href="#pub-methods">Public Member Functions</a> &#124;
+<a href="#pub-attribs">Public Attributes</a> &#124;
+<a href="class_canvas_item-members.html">List of all members</a>  </div>
   <div class="headertitle">
-<div class="title">Wrapper Member List</div>  </div>
+<div class="title">CanvasItem Class Reference</div>  </div>
 </div><!--header-->
 <div class="contents">
-
-<p>This is the complete list of members for <a class="el" href="class_wrapper.html">Wrapper</a>, including all inherited members.</p>
-<table class="directory">
-  <tr bgcolor="#f0f0f0" class="even"><td class="entry"><b>Data</b> typedef (defined in <a class="el" href="class_wrapper.html">Wrapper</a>)</td><td class="entry"><a class="el" href="class_wrapper.html">Wrapper</a></td><td class="entry"></td></tr>
-  <tr bgcolor="#f0f0f0"><td class="entry"><b>getData</b>() (defined in <a class="el" href="class_wrapper.html">Wrapper</a>)</td><td class="entry"><a class="el" href="class_wrapper.html">Wrapper</a></td><td class="entry"><span class="mlabel">inline</span></td></tr>
-  <tr bgcolor="#f0f0f0" class="even"><td class="entry"><b>getType</b>() const (defined in <a class="el" href="class_wrapper.html">Wrapper</a>)</td><td class="entry"><a class="el" href="class_wrapper.html">Wrapper</a></td><td class="entry"><span class="mlabel">inline</span></td></tr>
-  <tr bgcolor="#f0f0f0"><td class="entry"><b>Type</b> enum name (defined in <a class="el" href="class_wrapper.html">Wrapper</a>)</td><td class="entry"><a class="el" href="class_wrapper.html">Wrapper</a></td><td class="entry"></td></tr>
-  <tr bgcolor="#f0f0f0" class="even"><td class="entry"><b>Wrapper</b>() (defined in <a class="el" href="class_wrapper.html">Wrapper</a>)</td><td class="entry"><a class="el" href="class_wrapper.html">Wrapper</a></td><td class="entry"></td></tr>
-  <tr bgcolor="#f0f0f0"><td class="entry"><b>Wrapper</b>(Type type, Data data) (defined in <a class="el" href="class_wrapper.html">Wrapper</a>)</td><td class="entry"><a class="el" href="class_wrapper.html">Wrapper</a></td><td class="entry"></td></tr>
-  <tr bgcolor="#f0f0f0" class="even"><td class="entry"><b>Wrapper</b>(const Wrapper &amp;other) (defined in <a class="el" href="class_wrapper.html">Wrapper</a>)</td><td class="entry"><a class="el" href="class_wrapper.html">Wrapper</a></td><td class="entry"></td></tr>
-  <tr bgcolor="#f0f0f0"><td class="entry"><b>~Wrapper</b>() (defined in <a class="el" href="class_wrapper.html">Wrapper</a>)</td><td class="entry"><a class="el" href="class_wrapper.html">Wrapper</a></td><td class="entry"></td></tr>
-</table></div><!-- contents -->
+<div class="dynheader">
+Inheritance diagram for CanvasItem:</div>
+<div class="dyncontent">
+ <div class="center">
+  <img src="class_canvas_item.png" usemap="#CanvasItem_map" alt=""/>
+  <map id="CanvasItem_map" name="CanvasItem_map">
+<area href="class_curve.html" alt="Curve" shape="rect" coords="0,56,77,80"/>
+<area href="class_line.html" alt="Line" shape="rect" coords="87,56,164,80"/>
+<area href="class_panels.html" alt="Panels" shape="rect" coords="174,56,251,80"/>
+<area href="class_plot.html" alt="Plot" shape="rect" coords="261,56,338,80"/>
+<area href="class_point.html" alt="Point" shape="rect" coords="348,56,425,80"/>
+<area href="class_text.html" alt="Text" shape="rect" coords="435,56,512,80"/>
+  </map>
+</div></div>
+<table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pub-types"></a>
+Public Types</h2></td></tr>
+<tr class="memitem:a9bb3259e77f4d58676345ce917ae20ce"><td class="memItemLeft" align="right" valign="top"><a id="a9bb3259e77f4d58676345ce917ae20ce"></a>enum class &#160;</td><td class="memItemRight" valign="bottom"><b>Type</b> : char { <br />
+&#160;&#160;<b>I_None</b>
+, <b>I_Point</b>
+, <b>I_Line</b>
+, <b>I_Curve</b>
+, <br />
+&#160;&#160;<b>I_Plot</b>
+, <b>I_Text</b>
+, <b>I_Panels</b>
+<br />
+ }</td></tr>
+<tr class="separator:a9bb3259e77f4d58676345ce917ae20ce"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pub-methods"></a>
+Public Member Functions</h2></td></tr>
+<tr class="memitem:abe187a9eb2e399af416ee89a476ce3e9"><td class="memItemLeft" align="right" valign="top"><a id="abe187a9eb2e399af416ee89a476ce3e9"></a>
+virtual <a class="el" href="class_canvas_item.html">CanvasItem</a> *&#160;</td><td class="memItemRight" valign="bottom"><b>clone</b> () const</td></tr>
+<tr class="separator:abe187a9eb2e399af416ee89a476ce3e9"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pub-attribs"></a>
+Public Attributes</h2></td></tr>
+<tr class="memitem:a1b91376a0f2b9fc8b418f56e1b372bcb"><td class="memItemLeft" align="right" valign="top"><a id="a1b91376a0f2b9fc8b418f56e1b372bcb"></a>
+Type&#160;</td><td class="memItemRight" valign="bottom"><b>type</b></td></tr>
+<tr class="separator:a1b91376a0f2b9fc8b418f56e1b372bcb"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table>
+<hr/>The documentation for this class was generated from the following file:<ul>
+<li><a class="el" href="_canvas_item_8h_source.html">CanvasItem.h</a></li>
+</ul>
+</div><!-- contents -->
 <hr />
 <div style="margin:12px;color:#555555;">
     Since FY2019 the NASA Ames PAH IR Spectroscopic Database is being supported through a directed Work Package at NASA Ames titled: "<i>Laboratory Astrophysics - The NASA Ames PAH IR Spectroscopic Database</i>".

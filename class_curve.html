@@ -77,7 +77,8 @@ Inheritance diagram for Curve:</div>
  <div class="center">
   <img src="class_curve.png" usemap="#Curve_map" alt=""/>
   <map id="Curve_map" name="Curve_map">
-<area href="class_line_properties.html" alt="LineProperties" shape="rect" coords="0,0,94,24"/>
+<area href="class_canvas_item.html" alt="CanvasItem" shape="rect" coords="0,0,94,24"/>
+<area href="class_line_properties.html" alt="LineProperties" shape="rect" coords="104,0,198,24"/>
   </map>
 </div></div>
 <table class="memberdecls">
@@ -89,6 +90,19 @@ typedef std::vector&lt; double &gt;::iterator&#160;</td><td class="memItemRight"
 <tr class="memitem:abd4473c1d04926a19215bccaa3c67b82"><td class="memItemLeft" align="right" valign="top"><a id="abd4473c1d04926a19215bccaa3c67b82"></a>
 typedef const std::vector&lt; double &gt;::const_iterator&#160;</td><td class="memItemRight" valign="bottom"><b>const_iterator</b></td></tr>
 <tr class="separator:abd4473c1d04926a19215bccaa3c67b82"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="inherit_header pub_types_class_canvas_item"><td colspan="2" onclick="javascript:toggleInherit('pub_types_class_canvas_item')"><img src="closed.png" alt="-"/>&#160;Public Types inherited from <a class="el" href="class_canvas_item.html">CanvasItem</a></td></tr>
+<tr class="memitem:a9bb3259e77f4d58676345ce917ae20ce inherit pub_types_class_canvas_item"><td class="memItemLeft" align="right" valign="top"><a id="a9bb3259e77f4d58676345ce917ae20ce"></a>enum class &#160;</td><td class="memItemRight" valign="bottom"><b>Type</b> : char { <br />
+&#160;&#160;<b>I_None</b>
+, <b>I_Point</b>
+, <b>I_Line</b>
+, <b>I_Curve</b>
+, <br />
+&#160;&#160;<b>I_Plot</b>
+, <b>I_Text</b>
+, <b>I_Panels</b>
+<br />
+ }</td></tr>
+<tr class="separator:a9bb3259e77f4d58676345ce917ae20ce inherit pub_types_class_canvas_item"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="inherit_header pub_types_class_line_properties"><td colspan="2" onclick="javascript:toggleInherit('pub_types_class_line_properties')"><img src="closed.png" alt="-"/>&#160;Public Types inherited from <a class="el" href="class_line_properties.html">LineProperties</a></td></tr>
 <tr class="memitem:a3600248c34e64d11d3a15d1d45c98873 inherit pub_types_class_line_properties"><td class="memItemLeft" align="right" valign="top"><a id="a3600248c34e64d11d3a15d1d45c98873"></a>enum class &#160;</td><td class="memItemRight" valign="bottom"><b>Style</b> : char { <br />
 &#160;&#160;<b>Continuous</b> = 1
@@ -103,6 +117,9 @@ typedef const std::vector&lt; double &gt;::const_iterator&#160;</td><td class="m
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pub-methods"></a>
 Public Member Functions</h2></td></tr>
+<tr class="memitem:acf88045c0f5905aa8794d1b2266db3db"><td class="memItemLeft" align="right" valign="top"><a id="acf88045c0f5905aa8794d1b2266db3db"></a>
+<a class="el" href="class_curve.html">Curve</a> *&#160;</td><td class="memItemRight" valign="bottom"><b>clone</b> () const</td></tr>
+<tr class="separator:acf88045c0f5905aa8794d1b2266db3db"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a9edb4c44f8bcceb75709371644161b9e"><td class="memItemLeft" align="right" valign="top"><a id="a9edb4c44f8bcceb75709371644161b9e"></a>
 void&#160;</td><td class="memItemRight" valign="bottom"><b>setXAndY</b> (const std::vector&lt; double &gt; &amp;x, const std::vector&lt; double &gt; &amp;y)</td></tr>
 <tr class="separator:a9edb4c44f8bcceb75709371644161b9e"><td class="memSeparator" colspan="2">&#160;</td></tr>
@@ -179,6 +196,13 @@ void&#160;</td><td class="memItemRight" valign="bottom"><b>setLineStyle</b> (Sty
 <tr class="memitem:a4e764eb30512d209df4d03ac374e2bc1 inherit pub_methods_class_line_properties"><td class="memItemLeft" align="right" valign="top"><a id="a4e764eb30512d209df4d03ac374e2bc1"></a>
 const Style &amp;&#160;</td><td class="memItemRight" valign="bottom"><b>getLineStyle</b> () const</td></tr>
 <tr class="separator:a4e764eb30512d209df4d03ac374e2bc1 inherit pub_methods_class_line_properties"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="inherited"></a>
+Additional Inherited Members</h2></td></tr>
+<tr class="inherit_header pub_attribs_class_canvas_item"><td colspan="2" onclick="javascript:toggleInherit('pub_attribs_class_canvas_item')"><img src="closed.png" alt="-"/>&#160;Public Attributes inherited from <a class="el" href="class_canvas_item.html">CanvasItem</a></td></tr>
+<tr class="memitem:a1b91376a0f2b9fc8b418f56e1b372bcb inherit pub_attribs_class_canvas_item"><td class="memItemLeft" align="right" valign="top"><a id="a1b91376a0f2b9fc8b418f56e1b372bcb"></a>
+Type&#160;</td><td class="memItemRight" valign="bottom"><b>type</b></td></tr>
+<tr class="separator:a1b91376a0f2b9fc8b418f56e1b372bcb inherit pub_attribs_class_canvas_item"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <hr/>The documentation for this class was generated from the following files:<ul>
 <li><a class="el" href="_curve_8h_source.html">Curve.h</a></li>

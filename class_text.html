@@ -73,6 +73,15 @@ $(function() {
 <div class="title">Text Class Reference</div>  </div>
 </div><!--header-->
 <div class="contents">
+<div class="dynheader">
+Inheritance diagram for Text:</div>
+<div class="dyncontent">
+ <div class="center">
+  <img src="class_text.png" usemap="#Text_map" alt=""/>
+  <map id="Text_map" name="Text_map">
+<area href="class_canvas_item.html" alt="CanvasItem" shape="rect" coords="0,0,77,24"/>
+  </map>
+</div></div>
 <table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pub-types"></a>
 Public Types</h2></td></tr>
@@ -80,12 +89,28 @@ Public Types</h2></td></tr>
 , <b>NORMAL</b>
  }</td></tr>
 <tr class="separator:ab73b9dbc4353f02b487d3a6c736a368e"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="inherit_header pub_types_class_canvas_item"><td colspan="2" onclick="javascript:toggleInherit('pub_types_class_canvas_item')"><img src="closed.png" alt="-"/>&#160;Public Types inherited from <a class="el" href="class_canvas_item.html">CanvasItem</a></td></tr>
+<tr class="memitem:a9bb3259e77f4d58676345ce917ae20ce inherit pub_types_class_canvas_item"><td class="memItemLeft" align="right" valign="top"><a id="a9bb3259e77f4d58676345ce917ae20ce"></a>enum class &#160;</td><td class="memItemRight" valign="bottom"><b>Type</b> : char { <br />
+&#160;&#160;<b>I_None</b>
+, <b>I_Point</b>
+, <b>I_Line</b>
+, <b>I_Curve</b>
+, <br />
+&#160;&#160;<b>I_Plot</b>
+, <b>I_Text</b>
+, <b>I_Panels</b>
+<br />
+ }</td></tr>
+<tr class="separator:a9bb3259e77f4d58676345ce917ae20ce inherit pub_types_class_canvas_item"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pub-methods"></a>
 Public Member Functions</h2></td></tr>
 <tr class="memitem:aa45a27f780dda907a9086bac8744c0c7"><td class="memItemLeft" align="right" valign="top"><a id="aa45a27f780dda907a9086bac8744c0c7"></a>
 &#160;</td><td class="memItemRight" valign="bottom"><b>Text</b> (std::string_view text)</td></tr>
 <tr class="separator:aa45a27f780dda907a9086bac8744c0c7"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a7b4fca18aacf93f322d46e25ee537949"><td class="memItemLeft" align="right" valign="top"><a id="a7b4fca18aacf93f322d46e25ee537949"></a>
+virtual <a class="el" href="class_text.html">Text</a> *&#160;</td><td class="memItemRight" valign="bottom"><b>clone</b> () const</td></tr>
+<tr class="separator:a7b4fca18aacf93f322d46e25ee537949"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:aa9bfc70d180a20adcfc96de6f6569137"><td class="memItemLeft" align="right" valign="top"><a id="aa9bfc70d180a20adcfc96de6f6569137"></a>
 void&#160;</td><td class="memItemRight" valign="bottom"><b>setCoordinates</b> (const std::array&lt; double, 3 &gt; &amp;coordinates, CoordinateSystem system=CoordinateSystem::DATA)</td></tr>
 <tr class="separator:aa9bfc70d180a20adcfc96de6f6569137"><td class="memSeparator" colspan="2">&#160;</td></tr>
@@ -146,6 +171,13 @@ static constexpr double&#160;</td><td class="memItemRight" valign="bottom"><b>Ce
 <tr class="memitem:a12aa6766386ca1204ccd1a224fd48095"><td class="memItemLeft" align="right" valign="top"><a id="a12aa6766386ca1204ccd1a224fd48095"></a>
 static constexpr double&#160;</td><td class="memItemRight" valign="bottom"><b>RightJustification</b> = 1.0</td></tr>
 <tr class="separator:a12aa6766386ca1204ccd1a224fd48095"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="inherited"></a>
+Additional Inherited Members</h2></td></tr>
+<tr class="inherit_header pub_attribs_class_canvas_item"><td colspan="2" onclick="javascript:toggleInherit('pub_attribs_class_canvas_item')"><img src="closed.png" alt="-"/>&#160;Public Attributes inherited from <a class="el" href="class_canvas_item.html">CanvasItem</a></td></tr>
+<tr class="memitem:a1b91376a0f2b9fc8b418f56e1b372bcb inherit pub_attribs_class_canvas_item"><td class="memItemLeft" align="right" valign="top"><a id="a1b91376a0f2b9fc8b418f56e1b372bcb"></a>
+Type&#160;</td><td class="memItemRight" valign="bottom"><b>type</b></td></tr>
+<tr class="separator:a1b91376a0f2b9fc8b418f56e1b372bcb inherit pub_attribs_class_canvas_item"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <hr/>The documentation for this class was generated from the following files:<ul>
 <li><a class="el" href="_text_8h_source.html">Text.h</a></li>
