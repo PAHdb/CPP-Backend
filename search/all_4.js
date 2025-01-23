@@ -1,5 +1,4 @@
 var searchData=
 [
-  ['line_8',['Line',['../class_line.html',1,'']]],
-  ['lineproperties_9',['LineProperties',['../class_line_properties.html',1,'']]]
+  ['exception_0',['Exception',['../class_exception.html',1,'']]]
 ];

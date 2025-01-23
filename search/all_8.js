@@ -1,4 +1,4 @@
 var searchData=
 [
-  ['spectralfitter_19',['SpectralFitter',['../class_spectral_fitter.html',1,'']]]
+  ['minmax_0',['MinMax',['../class_min_max.html',1,'']]]
 ];

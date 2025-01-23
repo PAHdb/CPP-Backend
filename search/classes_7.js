@@ -1,4 +1,4 @@
 var searchData=
 [
-  ['spectralfitter_39',['SpectralFitter',['../class_spectral_fitter.html',1,'']]]
+  ['spectralfitter_0',['SpectralFitter',['../class_spectral_fitter.html',1,'']]]
 ];
