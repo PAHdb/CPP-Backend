@@ -102,7 +102,7 @@ public:
 private:
   static constexpr double TemperatureMin = 2.73;
 
-  static constexpr double TemperatureMax = 5000.0;
+  static constexpr double TemperatureMax = 6000.0;
 
   static constexpr double RootAccuracy = 1e-4;
 
