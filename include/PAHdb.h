@@ -27,9 +27,11 @@ sql_create_18(sql_properties, 1, 0, mysqlpp::sql_int_unsigned, uid,
 #include <vector>
 
 class PAHdb {
+private:
+  const char *pre[3] = {"", "exp_", "anharmonic_"};
 
 public:
-  enum class Database : char { Theory, Experiment };
+  enum class Database : char { Theory, Experiment, Anharmonic };
 
   void connect(std::string_view database, const std::string_view host,
                std::string_view username, const std::string_view password,

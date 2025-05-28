@@ -62,6 +62,8 @@ public:
 
   std::array<int, 2> const &getSize() const;
 
+  float getAspectRatio() const;
+
   std::string_view getColor() const;
 
   const double &getDefaultCharacterHeight() const;
@@ -117,6 +119,10 @@ inline void Canvas::setDefaultCharacterHeight(double height) {
 }
 
 inline std::array<int, 2> const &Canvas::getSize() const { return (_size); }
+
+inline float Canvas::getAspectRatio() const {
+  return static_cast<float>(_size[0]) / _size[1];
+}
 
 inline std::string_view Canvas::getColor() const { return (_color); }
 

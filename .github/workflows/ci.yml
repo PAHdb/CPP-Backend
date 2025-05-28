@@ -16,10 +16,10 @@ jobs:
           test ! -h /usr/local/lib/libgtest.a && sudo ln -s libgtest.a /usr/local/lib/libgtest.a
           test ! -h /usr/local/lib/libgtest_main.a && sudo ln -s libgtest_main.a /usr/local/lib/libgtest_main.a
           cd -
-      - uses: actions/checkout@v3
+      - uses: actions/checkout@v4
       - name: Check code style
         run: |
-          clang-format --dry-run -Werror *.h *.cpp include/*.h src/*.cpp
+          clang-format --output-replacements-xml --style=LLVM --dry-run -Werror *.h *.cpp include/*.h src/*.cpp
       - name: Make
         run: |
            make -f Makefile.server clean
@@ -30,14 +30,15 @@ jobs:
         run: |
           make -f Makefile.server clean
           make -f Makefile.server tests
-          bash <(curl -s https://codecov.io/bash) -X gcov
+          bash <(curl -s https://codecov.io/bash) -X gcov -t ${{ secrets.CODECOV_TOKEN }}
+
       - name: Build documentation
         run: |
           cd docs
           doxygen
       - name: Publish documentation
         if: ${{ github.event_name == 'push' }}
-        uses: peaceiris/actions-gh-pages@v3
+        uses: peaceiris/actions-gh-pages@v4
         with:
           github_token: ${{ secrets.GITHUB_TOKEN }}
           publish_dir: ./docs/html

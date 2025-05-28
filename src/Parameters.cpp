@@ -16,7 +16,7 @@ void Parameters::parse(const int argc, const char *argv[]) {
     TCLAP::ValueArg<std::string> database("", "database", "MySQL database",
                                           false, "pahdb", "string", _cmdline);
 
-    std::vector<std::string> constraint{"Theory", "Experiment"};
+    std::vector<std::string> constraint{"Theory", "Experiment", "Anharmonic"};
 
     TCLAP::ValuesConstraint<std::string> tableconstraint(constraint);
 
@@ -118,7 +118,7 @@ void Parameters::parse(const int argc, const char *argv[]) {
         "comma separated list of doubles", _cmdline);
 
     TCLAP::ValueArg<std::string> plotlimits(
-        "", "plotlimits", "Plot limits", false, "4000,1",
+        "", "plotlimits", "Plot limits", false, "7000,0",
         "Comma separated list of two doubles", _cmdline);
 
     constraint.clear();
@@ -150,6 +150,9 @@ void Parameters::parse(const int argc, const char *argv[]) {
     } else if (table.getValue() == "Experiment") {
 
       _table = PAHdb::Database::Experiment;
+    } else if (table.getValue() == "Anharmonic") {
+
+      _table = PAHdb::Database::Anharmonic;
     }
 
     _host = host.getValue();

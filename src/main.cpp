@@ -12,7 +12,7 @@
 #include "Parameters.h"
 #include "SpectralFitter.h"
 #include "ctime"
-#include "iostream"
+#include <iostream>
 
 /** Define own memory handler */
 void new_handler() {
@@ -469,6 +469,15 @@ int main(const int argc, const char *argv[], char ** /* envp */) {
 
   std::array<int, 2> canvassize;
 
+  std::vector<bool> available;
+
+  available.reserve(3);
+
+  int npanels;
+
+  std::array<const char *, 3> annotations = {"Laboratory", "Harmonic Theory",
+                                             "Anharmonic Theory"};
+
   switch (parameters.getTool()) {
 
   case Parameters::Arg::Stack:
@@ -493,8 +502,6 @@ int main(const int argc, const char *argv[], char ** /* envp */) {
 
     panels.setLayout(1, spectra.size());
 
-    formulae = pahdb.getFormulaeFromIds(parameters.getIds());
-
     geometries = pahdb.getGeometriesFromIds(parameters.getIds());
 
     std::for_each(geometries.begin(), geometries.end(),
@@ -504,7 +511,7 @@ int main(const int argc, const char *argv[], char ** /* envp */) {
 
       plot.setAdvance(false);
 
-      // draw panel grid
+      // Draw panel grid
 
       plot.setDrawHorizontalFineGrid();
 
@@ -604,6 +611,8 @@ int main(const int argc, const char *argv[], char ** /* envp */) {
       }
 
       // Write panel formula
+
+      formulae = pahdb.getFormulaeFromIds(parameters.getIds());
 
       if (parameters.getTool() != Parameters::Arg::TemperatureStack) {
 
@@ -711,10 +720,17 @@ int main(const int argc, const char *argv[], char ** /* envp */) {
     break;
   case Parameters::Arg::CompareExperimentWithTheory:
 
+    for (const auto &t : transitions) {
+
+      available.emplace_back(t.size());
+    }
+
+    npanels = std::count(available.begin(), available.end(), true);
+
     canvassize[0] = canvas.getSize().at(0);
 
     canvassize[1] = canvas.getSize().at(1) +
-                    parameters.getPlotSize().at(1) *
+                    (npanels - 1) * parameters.getPlotSize().at(1) *
                         (plot.getYMargins().at(1) - plot.getYMargins().at(0));
 
     canvas.setSize(canvassize);
@@ -725,6 +741,8 @@ int main(const int argc, const char *argv[], char ** /* envp */) {
     margins[1] = 1.0 - ((1.0 - plot.getYMargins().at(1)) *
                         parameters.getPlotSize().at(1)) /
                            canvas.getSize().at(1);
+
+    // Draw panel grid
 
     plot.setAdvance(false);
 
@@ -745,7 +763,7 @@ int main(const int argc, const char *argv[], char ** /* envp */) {
 
     newmargins[0] = margins[0];
 
-    newmargins[1] = margins[0] + (margins[1] - margins[0]) / 2.0;
+    newmargins[1] = margins[0] + (margins[1] - margins[0]) / npanels;
 
     plot.setYMargins(newmargins);
 
@@ -755,7 +773,7 @@ int main(const int argc, const char *argv[], char ** /* envp */) {
 
     newmargins[0] = newmargins[1];
 
-    newmargins[1] = newmargins[1] + (margins[1] - margins[0]) / 2.0;
+    newmargins[1] = newmargins[1] + (margins[1] - margins[0]) / npanels;
 
     plot.setYMargins(newmargins);
 
@@ -763,7 +781,20 @@ int main(const int argc, const char *argv[], char ** /* envp */) {
 
     plot.clear();
 
-    formulae = pahdb.getFormulaeFromIds(parameters.getIds());
+    if (npanels > 2) {
+
+      newmargins[0] = newmargins[1];
+
+      newmargins[1] = newmargins[1] + (margins[1] - margins[0]) / npanels;
+
+      plot.setYMargins(newmargins);
+
+      plots.push_back(plot);
+
+      plot.clear();
+    }
+
+    // Draw canvas geometry
 
     geometries = pahdb.getGeometriesFromIds(parameters.getIds());
 
@@ -789,7 +820,7 @@ int main(const int argc, const char *argv[], char ** /* envp */) {
                 geometries.at(0)[i].getX() *
                     (plot.getXLimits().at(1) - plot.getXLimits().at(0)) / 28.0,
             (plot.getYLimits().at(1) + plot.getYLimits().at(0)) / 2.0 +
-                geometries.at(0)[i].getY() *
+                canvas.getAspectRatio() * geometries.at(0)[i].getY() *
                     (plot.getYLimits().at(1) - plot.getYLimits().at(0)) / 28.0,
             geometries.at(0)[i].getZ());
 
@@ -798,7 +829,7 @@ int main(const int argc, const char *argv[], char ** /* envp */) {
                 geometries.at(0)[bond].getX() *
                     (plot.getXLimits().at(1) - plot.getXLimits().at(0)) / 28.0,
             (plot.getYLimits().at(1) + plot.getYLimits().at(0)) / 2.0 +
-                geometries.at(0)[bond].getY() *
+                canvas.getAspectRatio() * geometries.at(0)[bond].getY() *
                     (plot.getYLimits().at(1) - plot.getYLimits().at(0)) / 28.0,
             geometries.at(0)[bond].getZ());
 
@@ -808,6 +839,8 @@ int main(const int argc, const char *argv[], char ** /* envp */) {
       ++i;
     }
 
+    i = 0;
+
     for (const auto &atom : geometries.at(0)) {
 
       point.setCoordinates(
@@ -815,7 +848,7 @@ int main(const int argc, const char *argv[], char ** /* envp */) {
               atom.getX() *
                   (plot.getXLimits().at(1) - plot.getXLimits().at(0)) / 28.0,
           (plot.getYLimits().at(1) + plot.getYLimits().at(0)) / 2.0 +
-              atom.getY() *
+              canvas.getAspectRatio() * atom.getY() *
                   (plot.getYLimits().at(1) - plot.getYLimits().at(0)) / 28.0,
           atom.getZ());
 
@@ -826,29 +859,19 @@ int main(const int argc, const char *argv[], char ** /* envp */) {
       plot.add(point);
     }
 
+    // Draw canvas formula
+
+    formulae = pahdb.getFormulaeFromIds(parameters.getIds());
+
     text.setColor("0000ff");
+
+    text.setSize(2);
 
     text.setJustification(Text::RightJustification);
 
     text.setText(Text::formatChemicalFormula(formulae.at(0)));
 
     text.setCoordinates(0.95, 0.95, 0.0, Text::CoordinateSystem::NORMAL);
-
-    plot.add(text);
-
-    text.setSize(4);
-
-    text.setJustification(Text::CenterJustification);
-
-    text.setText("Theory");
-
-    text.setCoordinates(0.5, 0.75, 0.0, Text::CoordinateSystem::NORMAL);
-
-    plot.add(text);
-
-    text.setText("Experiment");
-
-    text.setCoordinates(0.5, 0.25, 0.0, Text::CoordinateSystem::NORMAL);
 
     plot.add(text);
 
@@ -860,6 +883,13 @@ int main(const int argc, const char *argv[], char ** /* envp */) {
 
     plot.getXAxis().at(0).setDrawConventionalAxis();
 
+    if (npanels > 2) {
+
+      plot.getXAxis().emplace_back();
+
+      plot.getXAxis().at(1).setDrawConventionalLabels(false);
+    }
+
     plot.getXAxis().at(0).setDrawConventionalLabels();
 
     plot.getYAxis().at(0).setDrawConventionalAxis();
@@ -870,7 +900,7 @@ int main(const int argc, const char *argv[], char ** /* envp */) {
 
     newmargins[0] = margins[0];
 
-    newmargins[1] = margins[0] + (margins[1] - margins[0]) / 2.0;
+    newmargins[1] = margins[0] + (margins[1] - margins[0]) / npanels;
 
     plot.setYMargins(newmargins);
 
@@ -878,7 +908,26 @@ int main(const int argc, const char *argv[], char ** /* envp */) {
 
     line.setColor("ff0000");
 
-    for (const auto &transition : transitions.at(0)) {
+    if (!available.at(i)) {
+
+      ++i;
+    }
+
+    // Draw panel annotation
+
+    text.setSize(3);
+
+    text.setJustification(Text::CenterJustification);
+
+    text.setText(annotations.at(i));
+
+    text.setCoordinates(0.5, 0.75, 0.0, Text::CoordinateSystem::NORMAL);
+
+    plot.add(text);
+
+    // Draw panel transitions
+
+    for (const auto &transition : transitions.at(i++)) {
 
       line.setStartCoordinates(transition.first, 0.0, 0.0);
 
@@ -893,35 +942,60 @@ int main(const int argc, const char *argv[], char ** /* envp */) {
 
     newmargins[0] = newmargins[1];
 
-    newmargins[1] = newmargins[1] + (margins[1] - margins[0]) / 2.0;
+    newmargins[1] = newmargins[1] + (margins[1] - margins[0]) / npanels;
 
     plot.setYMargins(newmargins);
 
-    plot.getXAxis().emplace_back();
+    if (npanels > 2) {
 
-    // plot.getXAxis().at(1).setReciprocalTickFinder();
+      plot.getXAxis().at(0).setTitle("");
 
-    plot.getXAxis().at(1).setReciprocalLabelFormatter();
+      plot.getXAxis().at(0).setDrawConventionalLabels(false);
+    }
 
-    plot.getXAxis().at(0).setDrawUnconventionalAxis(false);
+    if (npanels < 3) {
 
-    plot.getXAxis().at(1).setDrawConventionalAxis(false);
+      plot.getXAxis().emplace_back();
 
-    plot.getXAxis().at(1).setDrawConventionalLabels(false);
+      // plot.getXAxis().at(1).setReciprocalTickFinder();
 
-    plot.getXAxis().at(1).setDrawUnconventionalAxis();
+      plot.getXAxis().at(1).setReciprocalLabelFormatter();
 
-    plot.getXAxis().at(1).setDrawUnconventionalLabels();
+      plot.getXAxis().at(0).setDrawUnconventionalAxis(false);
 
-    plot.getXAxis().at(1).setTitle(xtitle2);
+      plot.getXAxis().at(1).setDrawConventionalAxis(false);
 
-    plot.getXAxis().at(0).setTitle("");
+      plot.getXAxis().at(1).setDrawConventionalLabels(false);
 
-    plot.getXAxis().at(0).setDrawZeroLine();
+      plot.getXAxis().at(1).setDrawUnconventionalAxis();
 
-    plot.getXAxis().at(0).setDrawConventionalLabels(false);
+      plot.getXAxis().at(1).setDrawUnconventionalLabels();
 
-    for (const auto &transition : transitions.at(1)) {
+      plot.getXAxis().at(1).setTitle(xtitle2);
+
+      plot.getXAxis().at(0).setTitle("");
+
+      plot.getXAxis().at(0).setDrawZeroLine();
+
+      plot.getXAxis().at(0).setDrawConventionalLabels(false);
+    }
+
+    if (!available.at(i)) {
+
+      ++i;
+    }
+
+    // Draw panel annotation
+
+    text.setText(annotations.at(i));
+
+    text.setCoordinates(0.5, 0.75, 0.0, Text::CoordinateSystem::NORMAL);
+
+    plot.add(text);
+
+    // Draw panel transitions
+
+    for (const auto &transition : transitions.at(i++)) {
 
       line.setStartCoordinates(transition.first, 0.0, 0.0);
 
@@ -931,6 +1005,60 @@ int main(const int argc, const char *argv[], char ** /* envp */) {
     }
 
     plots.push_back(plot);
+
+    plot.clear();
+
+    if (npanels > 2) {
+
+      newmargins[0] = newmargins[1];
+
+      newmargins[1] = newmargins[1] + (margins[1] - margins[0]) / npanels;
+
+      plot.setYMargins(newmargins);
+
+      // plot.getXAxis().at(1).setReciprocalTickFinder();
+
+      plot.getXAxis().at(1).setReciprocalLabelFormatter();
+
+      plot.getXAxis().at(0).setDrawUnconventionalAxis(false);
+
+      plot.getXAxis().at(1).setDrawConventionalAxis(false);
+
+      plot.getXAxis().at(1).setDrawConventionalLabels(false);
+
+      plot.getXAxis().at(1).setDrawUnconventionalAxis();
+
+      plot.getXAxis().at(1).setDrawUnconventionalLabels();
+
+      plot.getXAxis().at(1).setTitle(xtitle2);
+
+      plot.getXAxis().at(0).setTitle("");
+
+      plot.getXAxis().at(0).setDrawZeroLine();
+
+      plot.getXAxis().at(0).setDrawConventionalLabels(false);
+
+      // Draw panel annotation
+
+      text.setText(annotations.at(i));
+
+      text.setCoordinates(0.5, 0.75, 0.0, Text::CoordinateSystem::NORMAL);
+
+      plot.add(text);
+
+      // Draw panel transitions
+
+      for (const auto &transition : transitions.at(i)) {
+
+        line.setStartCoordinates(transition.first, 0.0, 0.0);
+
+        line.setEndCoordinates(transition.first, transition.second, 0.0);
+
+        plot.add(line);
+      }
+
+      plots.push_back(plot);
+    }
 
     canvas.add(plots);
 
@@ -944,8 +1072,8 @@ int main(const int argc, const char *argv[], char ** /* envp */) {
 
     text.setSize(1.0);
 
-    text.setCoordinates(0.0723, margins[0] + (margins[1] - margins[0]) / 2.0,
-                        0.0);
+    text.setCoordinates(0.0723,
+                        margins[0] + (margins[1] - margins[0]) / npanels, 0.0);
 
     canvas.add(text);
 

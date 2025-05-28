@@ -20,8 +20,6 @@ std::vector<std::vector<std::pair<double, double>>>
 PAHdb::getTransitionsFromUIDsAndVersion(const std::vector<int> &uids,
                                         int version) {
 
-  const char *tables[2] = {"", "exp_"};
-
   mysqlpp::Query query = _connection.query();
 
   mysqlpp::StoreQueryResult result;
@@ -39,12 +37,12 @@ PAHdb::getTransitionsFromUIDsAndVersion(const std::vector<int> &uids,
       query.reset();
 
       query << "SELECT frequency, intensity FROM "
-            << tables[static_cast<int>(_table)]
+            << pre[static_cast<int>(_table)]
             << "transitions WHERE specie_id=(SELECT id FROM "
-            << tables[static_cast<int>(_table)]
+            << pre[static_cast<int>(_table)]
             << "species AS s1 WHERE status & 2 = 0 AND update_number=(SELECT "
                "MAX(update_number) FROM  "
-            << tables[static_cast<int>(_table)]
+            << pre[static_cast<int>(_table)]
             << "species AS s2 WHERE update_number<=" << version
             << " AND s1.uid=s2.uid) AND uid=" << uid << ")";
 
@@ -82,8 +80,6 @@ PAHdb::getTransitionsFromVersion(int version, std::vector<int> &uids) {
 
   uids.clear();
 
-  const char *tables[2] = {"", "exp_"};
-
   mysqlpp::Query query = _connection.query();
 
   mysqlpp::StoreQueryResult result;
@@ -96,10 +92,10 @@ PAHdb::getTransitionsFromVersion(int version, std::vector<int> &uids) {
 
     query.reset();
 
-    query << "SELECT uid FROM " << tables[static_cast<int>(_table)]
+    query << "SELECT uid FROM " << pre[static_cast<int>(_table)]
           << "species AS s1 WHERE status & 2 = 0 AND update_number=(SELECT "
              "MAX(update_number) FROM "
-          << tables[static_cast<int>(_table)]
+          << pre[static_cast<int>(_table)]
           << "species AS s2 WHERE update_number <=" << version
           << " AND s1.uid=s2.uid) ORDER BY uid";
 
@@ -126,8 +122,6 @@ PAHdb::getTransitionsFromVersion(int version, std::vector<int> &uids) {
 std::vector<std::vector<std::pair<double, double>>>
 PAHdb::getTransitionsFromIds(const std::vector<int> &ids) {
 
-  const char *tables[2] = {"transitions", "exp_transitions"};
-
   mysqlpp::Query query = _connection.query();
 
   mysqlpp::StoreQueryResult result;
@@ -145,7 +139,8 @@ PAHdb::getTransitionsFromIds(const std::vector<int> &ids) {
       query.reset();
 
       query << "SELECT frequency, intensity FROM "
-            << tables[static_cast<int>(_table)] << " WHERE specie_id=" << id;
+            << pre[static_cast<int>(_table)]
+            << "transitions WHERE specie_id=" << id;
 
       result = query.store();
 
@@ -179,8 +174,6 @@ PAHdb::getTransitionsFromIds(const std::vector<int> &ids) {
 std::vector<std::vector<std::pair<double, double>>>
 PAHdb::getExperimentalAndTheoreticalTransitionsFromId(int id) {
 
-  const char *tables[2] = {"transitions", "exp_transitions"};
-
   mysqlpp::Query query = _connection.query();
 
   mysqlpp::StoreQueryResult result;
@@ -202,25 +195,23 @@ PAHdb::getExperimentalAndTheoreticalTransitionsFromId(int id) {
     case PAHdb::Database::Experiment:
 
       query << "SELECT frequency, intensity FROM "
-            << tables[static_cast<int>(PAHdb::Database::Experiment)]
-            << " WHERE specie_id=" << id;
+            << "exp_transitions WHERE specie_id=" << id;
 
       break;
+
+    case PAHdb::Database::Anharmonic:
     case PAHdb::Database::Theory:
     default:
 
       query
           << "SELECT frequency, intensity FROM "
-          << tables[static_cast<int>(PAHdb::Database::Experiment)]
-          << " JOIN exp_species ON "
-          << tables[static_cast<int>(PAHdb::Database::Experiment)]
-          << ".specie_id=exp_species.id "
-          << " WHERE uid=(SELECT uid FROM species WHERE id=" << id
+          << "exp_transitions JOIN exp_species ON "
+          << "exp_transitions.specie_id=exp_species.id "
+          << " WHERE uid=(SELECT uid FROM " << pre[static_cast<int>(_table)]
+          << "species WHERE id=" << id
           << ") AND update_number=(SELECT MAX(update_number) FROM exp_species "
-             "WHERE status & 2 = 0 AND uid=(SELECT uid FROM species WHERE id="
-          << id << "))";
-
-      break;
+          << "WHERE status & 2 = 0 AND uid=(SELECT uid FROM "
+          << pre[static_cast<int>(_table)] << "species WHERE id=" << id << "))";
     };
 
     result = query.store();
@@ -245,29 +236,26 @@ PAHdb::getExperimentalAndTheoreticalTransitionsFromId(int id) {
     query.reset();
 
     switch (_table) {
-
-    case PAHdb::Database::Experiment:
+    case PAHdb::Database::Theory:
 
       query << "SELECT frequency, intensity FROM "
-            << tables[static_cast<int>(PAHdb::Database::Theory)]
-            << " JOIN species ON "
-            << tables[static_cast<int>(PAHdb::Database::Theory)]
-            << ".specie_id=species.id "
-            << " WHERE uid=(SELECT uid FROM exp_species WHERE id=" << id
-            << ") AND update_number=(SELECT MAX(update_number) FROM species "
-               "WHERE status & 2 = 0 AND uid=(SELECT uid FROM exp_species "
-               "WHERE id="
-            << id << "))";
+            << "transitions WHERE specie_id=" << id;
 
       break;
-    case PAHdb::Database::Theory:
+
+    case PAHdb::Database::Anharmonic:
+    case PAHdb::Database::Experiment:
     default:
 
       query << "SELECT frequency, intensity FROM "
-            << tables[static_cast<int>(PAHdb::Database::Theory)]
-            << " WHERE specie_id=" << id;
-
-      break;
+            << "transitions JOIN species ON "
+            << "transitions.specie_id=species.id "
+            << " WHERE uid=(SELECT uid FROM " << pre[static_cast<int>(_table)]
+            << "species WHERE id=" << id
+            << ") AND update_number=(SELECT MAX(update_number) FROM species "
+            << "WHERE status & 2 = 0 AND uid=(SELECT uid FROM "
+            << pre[static_cast<int>(_table)] << "species WHERE id=" << id
+            << "))";
     };
 
     result = query.store();
@@ -291,6 +279,55 @@ PAHdb::getExperimentalAndTheoreticalTransitionsFromId(int id) {
     }
 
     vector.push_back(transitions);
+
+    query.reset();
+
+    switch (_table) {
+
+    case PAHdb::Database::Anharmonic:
+
+      query << "SELECT frequency, intensity FROM "
+            << "anharmonic_transitions WHERE specie_id=" << id;
+
+      break;
+
+    case PAHdb::Database::Theory:
+    case PAHdb::Database::Experiment:
+    default:
+
+      query << "SELECT frequency, intensity FROM "
+            << "anharmonic_transitions JOIN anharmonic_species ON "
+            << "anharmonic_transitions.specie_id=anharmonic_species.id "
+            << " WHERE uid=(SELECT uid FROM " << pre[static_cast<int>(_table)]
+            << "species WHERE id=" << id
+            << ") AND update_number=(SELECT MAX(update_number) FROM "
+               "anharmonic_species "
+            << "WHERE status & 2 = 0 AND uid=(SELECT uid FROM "
+            << pre[static_cast<int>(_table)] << "species WHERE id=" << id
+            << "))";
+    };
+
+    result = query.store();
+
+    transitions.clear();
+
+    try {
+
+      for (const auto &row : result) {
+
+        transition.first = row["frequency"];
+
+        transition.second = row["intensity"];
+
+        transitions.push_back(transition);
+      }
+    } catch (mysqlpp::BadFieldName &e) {
+
+      throw(Exception(e.what()));
+    }
+
+    vector.push_back(transitions);
+
   } catch (const mysqlpp::BadQuery &e) {
 
     throw(Exception(e.what()));
@@ -320,17 +357,21 @@ PAHdb::getGeometriesFromIds(const std::vector<int> &ids) {
 
       case PAHdb::Database::Experiment:
 
-        query << "SELECT x, y, z, type FROM geometries JOIN species ON "
-                 "geometries.specie_id=species.id JOIN exp_species ON "
-                 "species.id=exp_species.theoretical_id WHERE exp_species.id="
+        query << "SELECT x, y, z, type FROM "
+              << pre[static_cast<int>(PAHdb::Database::Theory)]
+              << "geometries JOIN species ON "
+              << "geometries.specie_id=species.id JOIN exp_species ON "
+              << "species.id=exp_species.theoretical_id WHERE exp_species.id="
               << id;
 
         break;
+
+      case PAHdb::Database::Anharmonic:
       case PAHdb::Database::Theory:
       default:
+        query << "SELECT * FROM " << pre[static_cast<int>(_table)]
+              << "geometries WHERE specie_id=" << id << " ORDER BY position";
 
-        query << "SELECT * FROM geometries WHERE specie_id=" << id
-              << " ORDER BY position";
         break;
       };
 
@@ -381,15 +422,18 @@ PAHdb::getFormulaeFromIds(const std::vector<int> &ids) {
       case PAHdb::Database::Experiment:
 
         query << "SELECT formula, species.update_number FROM species JOIN "
-                 "exp_species ON species.uid=exp_species.uid WHERE "
-                 "exp_species.id="
-              << id << " ORDER BY species.update_number DESC LIMIT 1";
+              << "exp_species ON species.uid=exp_species.uid WHERE "
+              << "exp_species.id=" << id
+              << " ORDER BY species.update_number DESC LIMIT 1";
 
         break;
+
+      case PAHdb::Database::Anharmonic:
       case PAHdb::Database::Theory:
       default:
 
-        query << "SELECT formula FROM species WHERE id=" << id;
+        query << "SELECT formula FROM " << pre[static_cast<int>(_table)]
+              << "species WHERE id=" << id;
         break;
       };
 
@@ -418,8 +462,6 @@ std::vector<sql_properties>
 PAHdb::getPropertiesByUIDsAndVersion(const std::vector<int> &uids,
                                      int version) {
 
-  static constexpr const char *tables[2] = {"", "exp_"};
-
   std::vector<sql_properties> properties;
 
   mysqlpp::Query query = _connection.query();
@@ -430,10 +472,10 @@ PAHdb::getPropertiesByUIDsAndVersion(const std::vector<int> &uids,
 
     query << "SELECT uid, n_h, n_c, n_n, n_o, n_mg, n_si, n_fe, charge, "
              "n_solo, n_duo, n_trio, n_quartet, n_quintet, n_ch2, n_chx FROM "
-          << tables[static_cast<int>(_table)]
+          << pre[static_cast<int>(_table)]
           << "species AS s1 WHERE status & 2 = 0 AND update_number=(SELECT "
              "MAX(update_number) FROM "
-          << tables[static_cast<int>(_table)]
+          << pre[static_cast<int>(_table)]
           << "species AS s2 WHERE update_number<=" << version
           << " AND s1.uid=s2.uid) AND uid IN (" << uids.front();
 
@@ -462,8 +504,6 @@ PAHdb::getPropertiesByUIDsAndVersion(const std::vector<int> &uids,
 std::vector<sql_properties>
 PAHdb::getPropertiesByIDs(const std::vector<int> &ids) {
 
-  static constexpr const char *tables[2] = {"", "exp_"};
-
   std::vector<sql_properties> properties;
 
   mysqlpp::Query query = _connection.query();
@@ -472,20 +512,26 @@ PAHdb::getPropertiesByIDs(const std::vector<int> &ids) {
 
     query.reset();
 
-    if (_table == PAHdb::Database::Theory) {
+    switch (_table) {
 
-      query << "SELECT uid, n_h, n_c, n_n, n_o, n_mg, n_si, n_fe, charge, "
-               "n_solo, n_duo, n_trio, n_quartet, n_quintet, n_ch2, n_chx FROM "
-            << tables[static_cast<int>(_table)] << "species WHERE id IN ("
-            << ids.front();
-    } else if (_table == PAHdb::Database::Experiment) {
+    case PAHdb::Database::Experiment:
 
       query << "SELECT t1.uid, t2.n_h, t2.n_c, t2.n_n, t2.n_o, t2.n_mg, "
-               "t2.n_si, t2.n_fe, t2.charge, t2.n_solo, t2.n_duo, t2.n_trio, "
-               "t2.n_quartet, t2.n_quintet, t2.n_ch2, t2.n_chx FROM (SELECT * "
-               "FROM "
-            << tables[static_cast<int>(_table)]
+            << "t2.n_si, t2.n_fe, t2.charge, t2.n_solo, t2.n_duo, t2.n_trio, "
+            << "t2.n_quartet, t2.n_quintet, t2.n_ch2, t2.n_chx FROM (SELECT * "
+            << "FROM " << pre[static_cast<int>(_table)]
             << "species AS s WHERE status & 2 = 0 AND id IN (" << ids.front();
+
+      break;
+
+    case PAHdb::Database::Theory:
+    case PAHdb::Database::Anharmonic:
+    default:
+
+      query << "SELECT uid, n_h, n_c, n_n, n_o, n_mg, n_si, n_fe, charge, "
+            << "n_solo, n_duo, n_trio, n_quartet, n_quintet, n_ch2, n_chx FROM "
+            << pre[static_cast<int>(_table)] << "species WHERE id IN ("
+            << ids.front();
     }
 
     std::for_each(std::next(ids.cbegin(), 1), ids.cend(),
