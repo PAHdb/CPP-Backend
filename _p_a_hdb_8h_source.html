@@ -113,77 +113,81 @@ $(document).ready(function() { init_codefold(0); });
 <div class="line"><a id="l00028" name="l00028"></a><span class="lineno">   28</span> </div>
 <div class="foldopen" id="foldopen00029" data-start="{" data-end="};">
 <div class="line"><a id="l00029" name="l00029"></a><span class="lineno"><a class="line" href="class_p_a_hdb.html">   29</a></span><span class="keyword">class </span><a class="code hl_class" href="class_p_a_hdb.html">PAHdb</a> {</div>
-<div class="line"><a id="l00030" name="l00030"></a><span class="lineno">   30</span> </div>
-<div class="line"><a id="l00031" name="l00031"></a><span class="lineno">   31</span><span class="keyword">public</span>:</div>
-<div class="line"><a id="l00032" name="l00032"></a><span class="lineno">   32</span>  <span class="keyword">enum class</span> Database : <span class="keywordtype">char</span> { Theory, Experiment };</div>
-<div class="line"><a id="l00033" name="l00033"></a><span class="lineno">   33</span> </div>
-<div class="line"><a id="l00034" name="l00034"></a><span class="lineno">   34</span>  <span class="keywordtype">void</span> connect(std::string_view database, <span class="keyword">const</span> std::string_view host,</div>
-<div class="line"><a id="l00035" name="l00035"></a><span class="lineno">   35</span>               std::string_view username, <span class="keyword">const</span> std::string_view password,</div>
-<div class="line"><a id="l00036" name="l00036"></a><span class="lineno">   36</span>               <span class="keywordtype">int</span> port, <span class="keywordtype">bool</span> compress, <span class="keywordtype">int</span> timeout,</div>
-<div class="line"><a id="l00037" name="l00037"></a><span class="lineno">   37</span>               <span class="keyword">const</span> std::string_view socket);</div>
-<div class="line"><a id="l00038" name="l00038"></a><span class="lineno">   38</span> </div>
-<div class="line"><a id="l00039" name="l00039"></a><span class="lineno">   39</span>  <span class="keywordtype">void</span> setTable(Database table);</div>
+<div class="line"><a id="l00030" name="l00030"></a><span class="lineno">   30</span><span class="keyword">private</span>:</div>
+<div class="line"><a id="l00031" name="l00031"></a><span class="lineno">   31</span>  <span class="keyword">const</span> <span class="keywordtype">char</span> *pre[3] = {<span class="stringliteral">&quot;&quot;</span>, <span class="stringliteral">&quot;exp_&quot;</span>, <span class="stringliteral">&quot;anharmonic_&quot;</span>};</div>
+<div class="line"><a id="l00032" name="l00032"></a><span class="lineno">   32</span> </div>
+<div class="line"><a id="l00033" name="l00033"></a><span class="lineno">   33</span><span class="keyword">public</span>:</div>
+<div class="line"><a id="l00034" name="l00034"></a><span class="lineno">   34</span>  <span class="keyword">enum class</span> Database : <span class="keywordtype">char</span> { Theory, Experiment, Anharmonic };</div>
+<div class="line"><a id="l00035" name="l00035"></a><span class="lineno">   35</span> </div>
+<div class="line"><a id="l00036" name="l00036"></a><span class="lineno">   36</span>  <span class="keywordtype">void</span> connect(std::string_view database, <span class="keyword">const</span> std::string_view host,</div>
+<div class="line"><a id="l00037" name="l00037"></a><span class="lineno">   37</span>               std::string_view username, <span class="keyword">const</span> std::string_view password,</div>
+<div class="line"><a id="l00038" name="l00038"></a><span class="lineno">   38</span>               <span class="keywordtype">int</span> port, <span class="keywordtype">bool</span> compress, <span class="keywordtype">int</span> timeout,</div>
+<div class="line"><a id="l00039" name="l00039"></a><span class="lineno">   39</span>               <span class="keyword">const</span> std::string_view socket);</div>
 <div class="line"><a id="l00040" name="l00040"></a><span class="lineno">   40</span> </div>
-<div class="line"><a id="l00041" name="l00041"></a><span class="lineno">   41</span>  <span class="keywordtype">void</span> setProgress(<span class="keywordtype">double</span> progress);</div>
+<div class="line"><a id="l00041" name="l00041"></a><span class="lineno">   41</span>  <span class="keywordtype">void</span> setTable(Database table);</div>
 <div class="line"><a id="l00042" name="l00042"></a><span class="lineno">   42</span> </div>
-<div class="line"><a id="l00043" name="l00043"></a><span class="lineno">   43</span>  <span class="keywordtype">void</span> setError(<span class="keyword">const</span> <span class="keywordtype">char</span> *error);</div>
+<div class="line"><a id="l00043" name="l00043"></a><span class="lineno">   43</span>  <span class="keywordtype">void</span> setProgress(<span class="keywordtype">double</span> progress);</div>
 <div class="line"><a id="l00044" name="l00044"></a><span class="lineno">   44</span> </div>
-<div class="line"><a id="l00045" name="l00045"></a><span class="lineno">   45</span>  std::vector&lt;std::vector&lt;std::pair&lt;double, double&gt;&gt;&gt;</div>
-<div class="line"><a id="l00046" name="l00046"></a><span class="lineno">   46</span>  getTransitionsFromUIDsAndVersion(<span class="keyword">const</span> std::vector&lt;int&gt; &amp;uids, <span class="keywordtype">int</span> version);</div>
-<div class="line"><a id="l00047" name="l00047"></a><span class="lineno">   47</span> </div>
-<div class="line"><a id="l00048" name="l00048"></a><span class="lineno">   48</span>  std::vector&lt;std::vector&lt;std::pair&lt;double, double&gt;&gt;&gt;</div>
-<div class="line"><a id="l00049" name="l00049"></a><span class="lineno">   49</span>  getTransitionsFromUIDAndVersion(<span class="keywordtype">int</span> uid, <span class="keywordtype">int</span> version);</div>
-<div class="line"><a id="l00050" name="l00050"></a><span class="lineno">   50</span> </div>
-<div class="line"><a id="l00051" name="l00051"></a><span class="lineno">   51</span>  std::vector&lt;std::vector&lt;std::pair&lt;double, double&gt;&gt;&gt;</div>
-<div class="line"><a id="l00052" name="l00052"></a><span class="lineno">   52</span>  getTransitionsFromVersion(<span class="keywordtype">int</span> version, std::vector&lt;int&gt; &amp;ids);</div>
-<div class="line"><a id="l00053" name="l00053"></a><span class="lineno">   53</span> </div>
-<div class="line"><a id="l00054" name="l00054"></a><span class="lineno">   54</span>  std::vector&lt;std::vector&lt;std::pair&lt;double, double&gt;&gt;&gt;</div>
-<div class="line"><a id="l00055" name="l00055"></a><span class="lineno">   55</span>  getTransitionsFromIds(<span class="keyword">const</span> std::vector&lt;int&gt; &amp;ids);</div>
-<div class="line"><a id="l00056" name="l00056"></a><span class="lineno">   56</span> </div>
-<div class="line"><a id="l00057" name="l00057"></a><span class="lineno">   57</span>  std::vector&lt;std::vector&lt;std::pair&lt;double, double&gt;&gt;&gt;</div>
-<div class="line"><a id="l00058" name="l00058"></a><span class="lineno">   58</span>  getTransitionsFromId(<span class="keywordtype">int</span> <span class="keywordtype">id</span>);</div>
-<div class="line"><a id="l00059" name="l00059"></a><span class="lineno">   59</span> </div>
-<div class="line"><a id="l00060" name="l00060"></a><span class="lineno">   60</span>  std::vector&lt;std::vector&lt;std::pair&lt;double, double&gt;&gt;&gt;</div>
-<div class="line"><a id="l00061" name="l00061"></a><span class="lineno">   61</span>  getExperimentalAndTheoreticalTransitionsFromId(<span class="keywordtype">int</span> <span class="keywordtype">id</span>);</div>
-<div class="line"><a id="l00062" name="l00062"></a><span class="lineno">   62</span> </div>
-<div class="line"><a id="l00063" name="l00063"></a><span class="lineno">   63</span>  std::vector&lt;PAHGeometry&gt; getGeometriesFromIds(<span class="keyword">const</span> std::vector&lt;int&gt; &amp;ids);</div>
+<div class="line"><a id="l00045" name="l00045"></a><span class="lineno">   45</span>  <span class="keywordtype">void</span> setError(<span class="keyword">const</span> <span class="keywordtype">char</span> *error);</div>
+<div class="line"><a id="l00046" name="l00046"></a><span class="lineno">   46</span> </div>
+<div class="line"><a id="l00047" name="l00047"></a><span class="lineno">   47</span>  std::vector&lt;std::vector&lt;std::pair&lt;double, double&gt;&gt;&gt;</div>
+<div class="line"><a id="l00048" name="l00048"></a><span class="lineno">   48</span>  getTransitionsFromUIDsAndVersion(<span class="keyword">const</span> std::vector&lt;int&gt; &amp;uids, <span class="keywordtype">int</span> version);</div>
+<div class="line"><a id="l00049" name="l00049"></a><span class="lineno">   49</span> </div>
+<div class="line"><a id="l00050" name="l00050"></a><span class="lineno">   50</span>  std::vector&lt;std::vector&lt;std::pair&lt;double, double&gt;&gt;&gt;</div>
+<div class="line"><a id="l00051" name="l00051"></a><span class="lineno">   51</span>  getTransitionsFromUIDAndVersion(<span class="keywordtype">int</span> uid, <span class="keywordtype">int</span> version);</div>
+<div class="line"><a id="l00052" name="l00052"></a><span class="lineno">   52</span> </div>
+<div class="line"><a id="l00053" name="l00053"></a><span class="lineno">   53</span>  std::vector&lt;std::vector&lt;std::pair&lt;double, double&gt;&gt;&gt;</div>
+<div class="line"><a id="l00054" name="l00054"></a><span class="lineno">   54</span>  getTransitionsFromVersion(<span class="keywordtype">int</span> version, std::vector&lt;int&gt; &amp;ids);</div>
+<div class="line"><a id="l00055" name="l00055"></a><span class="lineno">   55</span> </div>
+<div class="line"><a id="l00056" name="l00056"></a><span class="lineno">   56</span>  std::vector&lt;std::vector&lt;std::pair&lt;double, double&gt;&gt;&gt;</div>
+<div class="line"><a id="l00057" name="l00057"></a><span class="lineno">   57</span>  getTransitionsFromIds(<span class="keyword">const</span> std::vector&lt;int&gt; &amp;ids);</div>
+<div class="line"><a id="l00058" name="l00058"></a><span class="lineno">   58</span> </div>
+<div class="line"><a id="l00059" name="l00059"></a><span class="lineno">   59</span>  std::vector&lt;std::vector&lt;std::pair&lt;double, double&gt;&gt;&gt;</div>
+<div class="line"><a id="l00060" name="l00060"></a><span class="lineno">   60</span>  getTransitionsFromId(<span class="keywordtype">int</span> <span class="keywordtype">id</span>);</div>
+<div class="line"><a id="l00061" name="l00061"></a><span class="lineno">   61</span> </div>
+<div class="line"><a id="l00062" name="l00062"></a><span class="lineno">   62</span>  std::vector&lt;std::vector&lt;std::pair&lt;double, double&gt;&gt;&gt;</div>
+<div class="line"><a id="l00063" name="l00063"></a><span class="lineno">   63</span>  getExperimentalAndTheoreticalTransitionsFromId(<span class="keywordtype">int</span> <span class="keywordtype">id</span>);</div>
 <div class="line"><a id="l00064" name="l00064"></a><span class="lineno">   64</span> </div>
-<div class="line"><a id="l00065" name="l00065"></a><span class="lineno">   65</span>  std::vector&lt;sql_properties&gt;</div>
-<div class="line"><a id="l00066" name="l00066"></a><span class="lineno">   66</span>  getPropertiesByUIDsAndVersion(<span class="keyword">const</span> std::vector&lt;int&gt; &amp;uids, <span class="keywordtype">int</span> version);</div>
-<div class="line"><a id="l00067" name="l00067"></a><span class="lineno">   67</span> </div>
-<div class="line"><a id="l00068" name="l00068"></a><span class="lineno">   68</span>  std::vector&lt;sql_properties&gt; getPropertiesByIDs(<span class="keyword">const</span> std::vector&lt;int&gt; &amp;ids);</div>
+<div class="line"><a id="l00065" name="l00065"></a><span class="lineno">   65</span>  std::vector&lt;PAHGeometry&gt; getGeometriesFromIds(<span class="keyword">const</span> std::vector&lt;int&gt; &amp;ids);</div>
+<div class="line"><a id="l00066" name="l00066"></a><span class="lineno">   66</span> </div>
+<div class="line"><a id="l00067" name="l00067"></a><span class="lineno">   67</span>  std::vector&lt;sql_properties&gt;</div>
+<div class="line"><a id="l00068" name="l00068"></a><span class="lineno">   68</span>  getPropertiesByUIDsAndVersion(<span class="keyword">const</span> std::vector&lt;int&gt; &amp;uids, <span class="keywordtype">int</span> version);</div>
 <div class="line"><a id="l00069" name="l00069"></a><span class="lineno">   69</span> </div>
-<div class="line"><a id="l00070" name="l00070"></a><span class="lineno">   70</span>  std::vector&lt;std::string&gt; getFormulaeFromIds(<span class="keyword">const</span> std::vector&lt;int&gt; &amp;ids);</div>
+<div class="line"><a id="l00070" name="l00070"></a><span class="lineno">   70</span>  std::vector&lt;sql_properties&gt; getPropertiesByIDs(<span class="keyword">const</span> std::vector&lt;int&gt; &amp;ids);</div>
 <div class="line"><a id="l00071" name="l00071"></a><span class="lineno">   71</span> </div>
-<div class="line"><a id="l00072" name="l00072"></a><span class="lineno">   72</span><span class="keyword">private</span>:</div>
-<div class="line"><a id="l00073" name="l00073"></a><span class="lineno">   73</span>  mysqlpp::Connection _connection;</div>
-<div class="line"><a id="l00074" name="l00074"></a><span class="lineno">   74</span> </div>
-<div class="line"><a id="l00075" name="l00075"></a><span class="lineno">   75</span>  Database _table;</div>
-<div class="line"><a id="l00076" name="l00076"></a><span class="lineno">   76</span>};</div>
+<div class="line"><a id="l00072" name="l00072"></a><span class="lineno">   72</span>  std::vector&lt;std::string&gt; getFormulaeFromIds(<span class="keyword">const</span> std::vector&lt;int&gt; &amp;ids);</div>
+<div class="line"><a id="l00073" name="l00073"></a><span class="lineno">   73</span> </div>
+<div class="line"><a id="l00074" name="l00074"></a><span class="lineno">   74</span><span class="keyword">private</span>:</div>
+<div class="line"><a id="l00075" name="l00075"></a><span class="lineno">   75</span>  mysqlpp::Connection _connection;</div>
+<div class="line"><a id="l00076" name="l00076"></a><span class="lineno">   76</span> </div>
+<div class="line"><a id="l00077" name="l00077"></a><span class="lineno">   77</span>  Database _table;</div>
+<div class="line"><a id="l00078" name="l00078"></a><span class="lineno">   78</span>};</div>
 </div>
-<div class="line"><a id="l00077" name="l00077"></a><span class="lineno">   77</span> </div>
-<div class="line"><a id="l00078" name="l00078"></a><span class="lineno">   78</span><span class="keyword">inline</span> <span class="keywordtype">void</span> PAHdb::setTable(Database table) { _table = table; }</div>
 <div class="line"><a id="l00079" name="l00079"></a><span class="lineno">   79</span> </div>
-<div class="line"><a id="l00080" name="l00080"></a><span class="lineno">   80</span><span class="keyword">inline</span> std::vector&lt;std::vector&lt;std::pair&lt;double, double&gt;&gt;&gt;</div>
-<div class="line"><a id="l00081" name="l00081"></a><span class="lineno">   81</span>PAHdb::getTransitionsFromId(<span class="keywordtype">int</span> <span class="keywordtype">id</span>) {</div>
-<div class="line"><a id="l00082" name="l00082"></a><span class="lineno">   82</span>  <span class="keywordflow">return</span> (getTransitionsFromIds(std::vector&lt;int&gt;(1, <span class="keywordtype">id</span>)));</div>
-<div class="line"><a id="l00083" name="l00083"></a><span class="lineno">   83</span>}</div>
-<div class="line"><a id="l00084" name="l00084"></a><span class="lineno">   84</span> </div>
-<div class="line"><a id="l00085" name="l00085"></a><span class="lineno">   85</span><span class="keyword">inline</span> std::vector&lt;std::vector&lt;std::pair&lt;double, double&gt;&gt;&gt;</div>
-<div class="line"><a id="l00086" name="l00086"></a><span class="lineno">   86</span>PAHdb::getTransitionsFromUIDAndVersion(<span class="keywordtype">int</span> uid, <span class="keywordtype">int</span> version) {</div>
-<div class="line"><a id="l00087" name="l00087"></a><span class="lineno">   87</span>  <span class="keywordflow">return</span> (getTransitionsFromUIDsAndVersion(std::vector&lt;int&gt;(1, uid), version));</div>
-<div class="line"><a id="l00088" name="l00088"></a><span class="lineno">   88</span>}</div>
-<div class="line"><a id="l00089" name="l00089"></a><span class="lineno">   89</span> </div>
-<div class="line"><a id="l00090" name="l00090"></a><span class="lineno">   90</span><span class="preprocessor">#endif </span><span class="comment">/* PAHDB_H_ */</span><span class="preprocessor"></span></div>
-<div class="ttc" id="aclass_p_a_hdb_html"><div class="ttname"><a href="class_p_a_hdb.html">PAHdb</a></div><div class="ttdef"><b>Definition</b> PAHdb.h:29</div></div>
+<div class="line"><a id="l00080" name="l00080"></a><span class="lineno">   80</span><span class="keyword">inline</span> <span class="keywordtype">void</span> PAHdb::setTable(Database table) { _table = table; }</div>
+<div class="line"><a id="l00081" name="l00081"></a><span class="lineno">   81</span> </div>
+<div class="line"><a id="l00082" name="l00082"></a><span class="lineno">   82</span><span class="keyword">inline</span> std::vector&lt;std::vector&lt;std::pair&lt;double, double&gt;&gt;&gt;</div>
+<div class="line"><a id="l00083" name="l00083"></a><span class="lineno">   83</span>PAHdb::getTransitionsFromId(<span class="keywordtype">int</span> <span class="keywordtype">id</span>) {</div>
+<div class="line"><a id="l00084" name="l00084"></a><span class="lineno">   84</span>  <span class="keywordflow">return</span> (getTransitionsFromIds(std::vector&lt;int&gt;(1, <span class="keywordtype">id</span>)));</div>
+<div class="line"><a id="l00085" name="l00085"></a><span class="lineno">   85</span>}</div>
+<div class="line"><a id="l00086" name="l00086"></a><span class="lineno">   86</span> </div>
+<div class="line"><a id="l00087" name="l00087"></a><span class="lineno">   87</span><span class="keyword">inline</span> std::vector&lt;std::vector&lt;std::pair&lt;double, double&gt;&gt;&gt;</div>
+<div class="line"><a id="l00088" name="l00088"></a><span class="lineno">   88</span>PAHdb::getTransitionsFromUIDAndVersion(<span class="keywordtype">int</span> uid, <span class="keywordtype">int</span> version) {</div>
+<div class="line"><a id="l00089" name="l00089"></a><span class="lineno">   89</span>  <span class="keywordflow">return</span> (getTransitionsFromUIDsAndVersion(std::vector&lt;int&gt;(1, uid), version));</div>
+<div class="line"><a id="l00090" name="l00090"></a><span class="lineno">   90</span>}</div>
+<div class="line"><a id="l00091" name="l00091"></a><span class="lineno">   91</span> </div>
+<div class="line"><a id="l00092" name="l00092"></a><span class="lineno">   92</span><span class="preprocessor">#endif </span><span class="comment">/* PAHDB_H_ */</span><span class="preprocessor"></span></div>
+<div class="ttc" id="aclass_p_a_hdb_html"><div class="ttname"><a href="class_p_a_hdb.html">PAHdb</a></div><div class="ttdef"><b>Definition</b> <a href="_p_a_hdb_8h_source.html#l00029">PAHdb.h:29</a></div></div>
 </div><!-- fragment --></div><!-- contents -->
 <hr />
-<div style="margin:12px;color:#555555;">
-    Since FY2019 the NASA Ames PAH IR Spectroscopic Database is being supported through a directed Work Package at NASA Ames titled: "<i>Laboratory Astrophysics - The NASA Ames PAH IR Spectroscopic Database</i>".
+<div style="margin: 12px; color: #555555">
+  Since FY2019 the NASA Ames PAH IR Spectroscopic Database is being supported
+  through a directed Work Package at NASA Ames titled: "<i
+    >Laboratory Astrophysics - The NASA Ames PAH IR Spectroscopic Database</i
+  >".
 </div>
-<div style="margin:12px;color:#555555;">
-    Since FY2023 the NASA Ames PAH IR Spectroscopic Database is being supported through the Laboratory Astrophysics Rd 2 directed Work Package at NASA Ames.
+<div style="margin: 12px; color: #555555">
+  Since FY2023 the NASA Ames PAH IR Spectroscopic Database is being supported
+  through the Laboratory Astrophysics Rd 2 directed Work Package at NASA Ames.
 </div>
-<div style="margin:12px">
-    © Copyright 2021-2023, Christiaan Boersma
-</div>
+<div style="margin: 12px">© Copyright 2021-2025, Christiaan Boersma</div>

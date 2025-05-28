@@ -92,12 +92,12 @@ Inheritance diagram for Text:</div>
 <table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="pub-types" name="pub-types"></a>
 Public Types</h2></td></tr>
-<tr class="memitem:ab73b9dbc4353f02b487d3a6c736a368e" id="r_ab73b9dbc4353f02b487d3a6c736a368e"><td class="memItemLeft" align="right" valign="top"><a id="ab73b9dbc4353f02b487d3a6c736a368e" name="ab73b9dbc4353f02b487d3a6c736a368e"></a>enum class &#160;</td><td class="memItemRight" valign="bottom"><b>CoordinateSystem</b> : char { <b>DATA</b>
+<tr class="memitem:ab73b9dbc4353f02b487d3a6c736a368e" id="r_ab73b9dbc4353f02b487d3a6c736a368e"><td class="memItemLeft" align="right" valign="top">enum class &#160;</td><td class="memItemRight" valign="bottom"><b>CoordinateSystem</b> : char { <b>DATA</b>
 , <b>NORMAL</b>
  }</td></tr>
 <tr class="separator:ab73b9dbc4353f02b487d3a6c736a368e"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="inherit_header pub_types_class_canvas_item"><td colspan="2" onclick="javascript:toggleInherit('pub_types_class_canvas_item')"><img src="closed.png" alt="-"/>&#160;Public Types inherited from <a class="el" href="class_canvas_item.html">CanvasItem</a></td></tr>
-<tr class="memitem:a9bb3259e77f4d58676345ce917ae20ce inherit pub_types_class_canvas_item" id="r_a9bb3259e77f4d58676345ce917ae20ce"><td class="memItemLeft" align="right" valign="top"><a id="a9bb3259e77f4d58676345ce917ae20ce" name="a9bb3259e77f4d58676345ce917ae20ce"></a>enum class &#160;</td><td class="memItemRight" valign="bottom"><b>Type</b> : char { <br />
+<tr class="memitem:a9bb3259e77f4d58676345ce917ae20ce inherit pub_types_class_canvas_item" id="r_a9bb3259e77f4d58676345ce917ae20ce"><td class="memItemLeft" align="right" valign="top">enum class &#160;</td><td class="memItemRight" valign="bottom"><b>Type</b> : char { <br />
 &#160;&#160;<b>I_None</b>
 , <b>I_Point</b>
 , <b>I_Line</b>
@@ -112,79 +112,127 @@ Public Types</h2></td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="pub-methods" name="pub-methods"></a>
 Public Member Functions</h2></td></tr>
-<tr class="memitem:aa45a27f780dda907a9086bac8744c0c7" id="r_aa45a27f780dda907a9086bac8744c0c7"><td class="memItemLeft" align="right" valign="top"><a id="aa45a27f780dda907a9086bac8744c0c7" name="aa45a27f780dda907a9086bac8744c0c7"></a>
-&#160;</td><td class="memItemRight" valign="bottom"><b>Text</b> (std::string_view text)</td></tr>
+<tr class="memitem:aa45a27f780dda907a9086bac8744c0c7" id="r_aa45a27f780dda907a9086bac8744c0c7"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_text.html#aa45a27f780dda907a9086bac8744c0c7">Text</a> (std::string_view text)</td></tr>
 <tr class="separator:aa45a27f780dda907a9086bac8744c0c7"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a7b4fca18aacf93f322d46e25ee537949" id="r_a7b4fca18aacf93f322d46e25ee537949"><td class="memItemLeft" align="right" valign="top">virtual <a class="el" href="class_text.html">Text</a> *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_text.html#a7b4fca18aacf93f322d46e25ee537949">clone</a> () const</td></tr>
 <tr class="separator:a7b4fca18aacf93f322d46e25ee537949"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:aa9bfc70d180a20adcfc96de6f6569137" id="r_aa9bfc70d180a20adcfc96de6f6569137"><td class="memItemLeft" align="right" valign="top"><a id="aa9bfc70d180a20adcfc96de6f6569137" name="aa9bfc70d180a20adcfc96de6f6569137"></a>
-void&#160;</td><td class="memItemRight" valign="bottom"><b>setCoordinates</b> (const std::array&lt; double, 3 &gt; &amp;coordinates, CoordinateSystem system=CoordinateSystem::DATA)</td></tr>
+<tr class="memitem:aa9bfc70d180a20adcfc96de6f6569137" id="r_aa9bfc70d180a20adcfc96de6f6569137"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_text.html#aa9bfc70d180a20adcfc96de6f6569137">setCoordinates</a> (const std::array&lt; double, 3 &gt; &amp;coordinates, CoordinateSystem system=CoordinateSystem::DATA)</td></tr>
 <tr class="separator:aa9bfc70d180a20adcfc96de6f6569137"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ad806363f729ba4e84444946e1d8ee5ab" id="r_ad806363f729ba4e84444946e1d8ee5ab"><td class="memItemLeft" align="right" valign="top"><a id="ad806363f729ba4e84444946e1d8ee5ab" name="ad806363f729ba4e84444946e1d8ee5ab"></a>
-void&#160;</td><td class="memItemRight" valign="bottom"><b>setCoordinates</b> (double x, double y, double z, CoordinateSystem system=CoordinateSystem::DATA)</td></tr>
+<tr class="memitem:ad806363f729ba4e84444946e1d8ee5ab" id="r_ad806363f729ba4e84444946e1d8ee5ab"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_text.html#ad806363f729ba4e84444946e1d8ee5ab">setCoordinates</a> (double x, double y, double z, CoordinateSystem system=CoordinateSystem::DATA)</td></tr>
 <tr class="separator:ad806363f729ba4e84444946e1d8ee5ab"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a6de55ad48a320ce772316d216a0869a8" id="r_a6de55ad48a320ce772316d216a0869a8"><td class="memItemLeft" align="right" valign="top"><a id="a6de55ad48a320ce772316d216a0869a8" name="a6de55ad48a320ce772316d216a0869a8"></a>
-std::array&lt; double, 3 &gt; const &amp;&#160;</td><td class="memItemRight" valign="bottom"><b>getCoordinates</b> () const</td></tr>
+<tr class="memitem:a6de55ad48a320ce772316d216a0869a8" id="r_a6de55ad48a320ce772316d216a0869a8"><td class="memItemLeft" align="right" valign="top">std::array&lt; double, 3 &gt; const &amp;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_text.html#a6de55ad48a320ce772316d216a0869a8">getCoordinates</a> () const</td></tr>
 <tr class="separator:a6de55ad48a320ce772316d216a0869a8"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a7b6390be5792e314d5d19cddf48039a7" id="r_a7b6390be5792e314d5d19cddf48039a7"><td class="memItemLeft" align="right" valign="top"><a id="a7b6390be5792e314d5d19cddf48039a7" name="a7b6390be5792e314d5d19cddf48039a7"></a>
-const CoordinateSystem &amp;&#160;</td><td class="memItemRight" valign="bottom"><b>getSystem</b> () const</td></tr>
+<tr class="memitem:a7b6390be5792e314d5d19cddf48039a7" id="r_a7b6390be5792e314d5d19cddf48039a7"><td class="memItemLeft" align="right" valign="top">const CoordinateSystem &amp;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_text.html#a7b6390be5792e314d5d19cddf48039a7">getSystem</a> () const</td></tr>
 <tr class="separator:a7b6390be5792e314d5d19cddf48039a7"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ab4173182aa59e8492b769b48eb6df444" id="r_ab4173182aa59e8492b769b48eb6df444"><td class="memItemLeft" align="right" valign="top"><a id="ab4173182aa59e8492b769b48eb6df444" name="ab4173182aa59e8492b769b48eb6df444"></a>
-void&#160;</td><td class="memItemRight" valign="bottom"><b>setText</b> (std::string_view text)</td></tr>
+<tr class="memitem:ab4173182aa59e8492b769b48eb6df444" id="r_ab4173182aa59e8492b769b48eb6df444"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_text.html#ab4173182aa59e8492b769b48eb6df444">setText</a> (std::string_view text)</td></tr>
 <tr class="separator:ab4173182aa59e8492b769b48eb6df444"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:af8864c14e46cb0111afaf67801d27072" id="r_af8864c14e46cb0111afaf67801d27072"><td class="memItemLeft" align="right" valign="top"><a id="af8864c14e46cb0111afaf67801d27072" name="af8864c14e46cb0111afaf67801d27072"></a>
-std::string_view&#160;</td><td class="memItemRight" valign="bottom"><b>getText</b> () const</td></tr>
+<tr class="memitem:af8864c14e46cb0111afaf67801d27072" id="r_af8864c14e46cb0111afaf67801d27072"><td class="memItemLeft" align="right" valign="top">std::string_view&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_text.html#af8864c14e46cb0111afaf67801d27072">getText</a> () const</td></tr>
 <tr class="separator:af8864c14e46cb0111afaf67801d27072"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:aee6bb54b44cbf273ffc937571c691b35" id="r_aee6bb54b44cbf273ffc937571c691b35"><td class="memItemLeft" align="right" valign="top"><a id="aee6bb54b44cbf273ffc937571c691b35" name="aee6bb54b44cbf273ffc937571c691b35"></a>
-void&#160;</td><td class="memItemRight" valign="bottom"><b>setColor</b> (std::string_view color)</td></tr>
+<tr class="memitem:aee6bb54b44cbf273ffc937571c691b35" id="r_aee6bb54b44cbf273ffc937571c691b35"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_text.html#aee6bb54b44cbf273ffc937571c691b35">setColor</a> (std::string_view color)</td></tr>
 <tr class="separator:aee6bb54b44cbf273ffc937571c691b35"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a244fb64f05e64888ed1bea234c363700" id="r_a244fb64f05e64888ed1bea234c363700"><td class="memItemLeft" align="right" valign="top"><a id="a244fb64f05e64888ed1bea234c363700" name="a244fb64f05e64888ed1bea234c363700"></a>
-std::string_view&#160;</td><td class="memItemRight" valign="bottom"><b>getColor</b> () const</td></tr>
+<tr class="memitem:a244fb64f05e64888ed1bea234c363700" id="r_a244fb64f05e64888ed1bea234c363700"><td class="memItemLeft" align="right" valign="top">std::string_view&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_text.html#a244fb64f05e64888ed1bea234c363700">getColor</a> () const</td></tr>
 <tr class="separator:a244fb64f05e64888ed1bea234c363700"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a3d45345af93f9d381837126304bc8ae0" id="r_a3d45345af93f9d381837126304bc8ae0"><td class="memItemLeft" align="right" valign="top"><a id="a3d45345af93f9d381837126304bc8ae0" name="a3d45345af93f9d381837126304bc8ae0"></a>
-void&#160;</td><td class="memItemRight" valign="bottom"><b>setSize</b> (double size)</td></tr>
+<tr class="memitem:a3d45345af93f9d381837126304bc8ae0" id="r_a3d45345af93f9d381837126304bc8ae0"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_text.html#a3d45345af93f9d381837126304bc8ae0">setSize</a> (double size)</td></tr>
 <tr class="separator:a3d45345af93f9d381837126304bc8ae0"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:aed678e304745921a99c1aeadf5b2d4f3" id="r_aed678e304745921a99c1aeadf5b2d4f3"><td class="memItemLeft" align="right" valign="top"><a id="aed678e304745921a99c1aeadf5b2d4f3" name="aed678e304745921a99c1aeadf5b2d4f3"></a>
-const double &amp;&#160;</td><td class="memItemRight" valign="bottom"><b>getSize</b> () const</td></tr>
+<tr class="memitem:aed678e304745921a99c1aeadf5b2d4f3" id="r_aed678e304745921a99c1aeadf5b2d4f3"><td class="memItemLeft" align="right" valign="top">const double &amp;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_text.html#aed678e304745921a99c1aeadf5b2d4f3">getSize</a> () const</td></tr>
 <tr class="separator:aed678e304745921a99c1aeadf5b2d4f3"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a298e4eb782c1178a1401af1d5eabc6f1" id="r_a298e4eb782c1178a1401af1d5eabc6f1"><td class="memItemLeft" align="right" valign="top"><a id="a298e4eb782c1178a1401af1d5eabc6f1" name="a298e4eb782c1178a1401af1d5eabc6f1"></a>
-void&#160;</td><td class="memItemRight" valign="bottom"><b>setAngle</b> (double angle)</td></tr>
+<tr class="memitem:a298e4eb782c1178a1401af1d5eabc6f1" id="r_a298e4eb782c1178a1401af1d5eabc6f1"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_text.html#a298e4eb782c1178a1401af1d5eabc6f1">setAngle</a> (double angle)</td></tr>
 <tr class="separator:a298e4eb782c1178a1401af1d5eabc6f1"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a49234808bb142638d5de106cdf91b087" id="r_a49234808bb142638d5de106cdf91b087"><td class="memItemLeft" align="right" valign="top"><a id="a49234808bb142638d5de106cdf91b087" name="a49234808bb142638d5de106cdf91b087"></a>
-const double &amp;&#160;</td><td class="memItemRight" valign="bottom"><b>getAngle</b> () const</td></tr>
+<tr class="memitem:a49234808bb142638d5de106cdf91b087" id="r_a49234808bb142638d5de106cdf91b087"><td class="memItemLeft" align="right" valign="top">const double &amp;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_text.html#a49234808bb142638d5de106cdf91b087">getAngle</a> () const</td></tr>
 <tr class="separator:a49234808bb142638d5de106cdf91b087"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a43caf739ae05730993102de1e871f1ca" id="r_a43caf739ae05730993102de1e871f1ca"><td class="memItemLeft" align="right" valign="top"><a id="a43caf739ae05730993102de1e871f1ca" name="a43caf739ae05730993102de1e871f1ca"></a>
-void&#160;</td><td class="memItemRight" valign="bottom"><b>setJustification</b> (double justification)</td></tr>
+<tr class="memitem:a43caf739ae05730993102de1e871f1ca" id="r_a43caf739ae05730993102de1e871f1ca"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_text.html#a43caf739ae05730993102de1e871f1ca">setJustification</a> (double justification)</td></tr>
 <tr class="separator:a43caf739ae05730993102de1e871f1ca"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:af3a8e1addecb7f7966946d95d9ceca92" id="r_af3a8e1addecb7f7966946d95d9ceca92"><td class="memItemLeft" align="right" valign="top"><a id="af3a8e1addecb7f7966946d95d9ceca92" name="af3a8e1addecb7f7966946d95d9ceca92"></a>
-const double &amp;&#160;</td><td class="memItemRight" valign="bottom"><b>getJustification</b> () const</td></tr>
+<tr class="memitem:af3a8e1addecb7f7966946d95d9ceca92" id="r_af3a8e1addecb7f7966946d95d9ceca92"><td class="memItemLeft" align="right" valign="top">const double &amp;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_text.html#af3a8e1addecb7f7966946d95d9ceca92">getJustification</a> () const</td></tr>
 <tr class="separator:af3a8e1addecb7f7966946d95d9ceca92"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="pub-static-methods" name="pub-static-methods"></a>
 Static Public Member Functions</h2></td></tr>
-<tr class="memitem:ae57ac92a80031040615ed998f74136a0" id="r_ae57ac92a80031040615ed998f74136a0"><td class="memItemLeft" align="right" valign="top"><a id="ae57ac92a80031040615ed998f74136a0" name="ae57ac92a80031040615ed998f74136a0"></a>
-static std::string&#160;</td><td class="memItemRight" valign="bottom"><b>formatChemicalFormula</b> (std::string_view formula)</td></tr>
+<tr class="memitem:ae57ac92a80031040615ed998f74136a0" id="r_ae57ac92a80031040615ed998f74136a0"><td class="memItemLeft" align="right" valign="top">static std::string&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_text.html#ae57ac92a80031040615ed998f74136a0">formatChemicalFormula</a> (std::string_view formula)</td></tr>
 <tr class="separator:ae57ac92a80031040615ed998f74136a0"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="pub-static-attribs" name="pub-static-attribs"></a>
 Static Public Attributes</h2></td></tr>
-<tr class="memitem:ae5c73d4e42452ea66e4a169fe26b6730" id="r_ae5c73d4e42452ea66e4a169fe26b6730"><td class="memItemLeft" align="right" valign="top"><a id="ae5c73d4e42452ea66e4a169fe26b6730" name="ae5c73d4e42452ea66e4a169fe26b6730"></a>
-static constexpr double&#160;</td><td class="memItemRight" valign="bottom"><b>LeftJustification</b> = 0.0</td></tr>
+<tr class="memitem:ae5c73d4e42452ea66e4a169fe26b6730" id="r_ae5c73d4e42452ea66e4a169fe26b6730"><td class="memItemLeft" align="right" valign="top">static constexpr double&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_text.html#ae5c73d4e42452ea66e4a169fe26b6730">LeftJustification</a> = 0.0</td></tr>
 <tr class="separator:ae5c73d4e42452ea66e4a169fe26b6730"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a5974b55fd118b1a2a00a256dad276dc1" id="r_a5974b55fd118b1a2a00a256dad276dc1"><td class="memItemLeft" align="right" valign="top"><a id="a5974b55fd118b1a2a00a256dad276dc1" name="a5974b55fd118b1a2a00a256dad276dc1"></a>
-static constexpr double&#160;</td><td class="memItemRight" valign="bottom"><b>CenterJustification</b> = 0.5</td></tr>
+<tr class="memitem:a5974b55fd118b1a2a00a256dad276dc1" id="r_a5974b55fd118b1a2a00a256dad276dc1"><td class="memItemLeft" align="right" valign="top">static constexpr double&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_text.html#a5974b55fd118b1a2a00a256dad276dc1">CenterJustification</a> = 0.5</td></tr>
 <tr class="separator:a5974b55fd118b1a2a00a256dad276dc1"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a12aa6766386ca1204ccd1a224fd48095" id="r_a12aa6766386ca1204ccd1a224fd48095"><td class="memItemLeft" align="right" valign="top"><a id="a12aa6766386ca1204ccd1a224fd48095" name="a12aa6766386ca1204ccd1a224fd48095"></a>
-static constexpr double&#160;</td><td class="memItemRight" valign="bottom"><b>RightJustification</b> = 1.0</td></tr>
+<tr class="memitem:a12aa6766386ca1204ccd1a224fd48095" id="r_a12aa6766386ca1204ccd1a224fd48095"><td class="memItemLeft" align="right" valign="top">static constexpr double&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_text.html#a12aa6766386ca1204ccd1a224fd48095">RightJustification</a> = 1.0</td></tr>
 <tr class="separator:a12aa6766386ca1204ccd1a224fd48095"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="inherited" name="inherited"></a>
 Additional Inherited Members</h2></td></tr>
 <tr class="inherit_header pub_attribs_class_canvas_item"><td colspan="2" onclick="javascript:toggleInherit('pub_attribs_class_canvas_item')"><img src="closed.png" alt="-"/>&#160;Public Attributes inherited from <a class="el" href="class_canvas_item.html">CanvasItem</a></td></tr>
-<tr class="memitem:a1b91376a0f2b9fc8b418f56e1b372bcb inherit pub_attribs_class_canvas_item" id="r_a1b91376a0f2b9fc8b418f56e1b372bcb"><td class="memItemLeft" align="right" valign="top">
-Type&#160;</td><td class="memItemRight" valign="bottom"><b>type</b></td></tr>
+<tr class="memitem:a1b91376a0f2b9fc8b418f56e1b372bcb inherit pub_attribs_class_canvas_item" id="r_a1b91376a0f2b9fc8b418f56e1b372bcb"><td class="memItemLeft" align="right" valign="top">Type&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_canvas_item.html#a1b91376a0f2b9fc8b418f56e1b372bcb">type</a></td></tr>
 <tr class="separator:a1b91376a0f2b9fc8b418f56e1b372bcb inherit pub_attribs_class_canvas_item"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
+<a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
+<div class="textblock">
+<p class="definition">Definition at line <a class="el" href="_text_8h_source.html#l00013">13</a> of file <a class="el" href="_text_8h_source.html">Text.h</a>.</p>
+</div><h2 class="groupheader">Member Enumeration Documentation</h2>
+<a id="ab73b9dbc4353f02b487d3a6c736a368e" name="ab73b9dbc4353f02b487d3a6c736a368e"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ab73b9dbc4353f02b487d3a6c736a368e">&#9670;&#160;</a></span>CoordinateSystem</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">enum class Text::CoordinateSystem : char</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">strong</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p class="definition">Definition at line <a class="el" href="_text_8h_source.html#l00016">16</a> of file <a class="el" href="_text_8h_source.html">Text.h</a>.</p>
+
+</div>
+</div>
+<h2 class="groupheader">Constructor &amp; Destructor Documentation</h2>
+<a id="ab3e26143fccc52699bcc5149cae852bc" name="ab3e26143fccc52699bcc5149cae852bc"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ab3e26143fccc52699bcc5149cae852bc">&#9670;&#160;</a></span>Text() <span class="overload">[1/2]</span></h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">Text::Text </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p class="definition">Definition at line <a class="el" href="_text_8cpp_source.html#l00003">3</a> of file <a class="el" href="_text_8cpp_source.html">Text.cpp</a>.</p>
+
+</div>
+</div>
+<a id="aa45a27f780dda907a9086bac8744c0c7" name="aa45a27f780dda907a9086bac8744c0c7"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#aa45a27f780dda907a9086bac8744c0c7">&#9670;&#160;</a></span>Text() <span class="overload">[2/2]</span></h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">Text::Text </td>
+          <td>(</td>
+          <td class="paramtype">std::string_view&#160;</td>
+          <td class="paramname"><em>text</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p class="definition">Definition at line <a class="el" href="_text_8cpp_source.html#l00010">10</a> of file <a class="el" href="_text_8cpp_source.html">Text.cpp</a>.</p>
+
+</div>
+</div>
 <h2 class="groupheader">Member Function Documentation</h2>
 <a id="a7b4fca18aacf93f322d46e25ee537949" name="a7b4fca18aacf93f322d46e25ee537949"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#a7b4fca18aacf93f322d46e25ee537949">&#9670;&#160;</a></span>clone()</h2>
@@ -211,20 +259,534 @@ Type&#160;</td><td class="memItemRight" valign="bottom"><b>type</b></td></tr>
 
 <p>Reimplemented from <a class="el" href="class_canvas_item.html">CanvasItem</a>.</p>
 
+<p class="definition">Definition at line <a class="el" href="_text_8cpp_source.html#l00016">16</a> of file <a class="el" href="_text_8cpp_source.html">Text.cpp</a>.</p>
+
+</div>
+</div>
+<a id="ae57ac92a80031040615ed998f74136a0" name="ae57ac92a80031040615ed998f74136a0"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ae57ac92a80031040615ed998f74136a0">&#9670;&#160;</a></span>formatChemicalFormula()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">std::string Text::formatChemicalFormula </td>
+          <td>(</td>
+          <td class="paramtype">std::string_view&#160;</td>
+          <td class="paramname"><em>formula</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">static</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p class="definition">Definition at line <a class="el" href="_text_8cpp_source.html#l00026">26</a> of file <a class="el" href="_text_8cpp_source.html">Text.cpp</a>.</p>
+
+</div>
+</div>
+<a id="a49234808bb142638d5de106cdf91b087" name="a49234808bb142638d5de106cdf91b087"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a49234808bb142638d5de106cdf91b087">&#9670;&#160;</a></span>getAngle()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">const double &amp; Text::getAngle </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td> const</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p class="definition">Definition at line <a class="el" href="_text_8h_source.html#l00100">100</a> of file <a class="el" href="_text_8h_source.html">Text.h</a>.</p>
+
+</div>
+</div>
+<a id="a244fb64f05e64888ed1bea234c363700" name="a244fb64f05e64888ed1bea234c363700"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a244fb64f05e64888ed1bea234c363700">&#9670;&#160;</a></span>getColor()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">std::string_view Text::getColor </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td> const</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p class="definition">Definition at line <a class="el" href="_text_8h_source.html#l00092">92</a> of file <a class="el" href="_text_8h_source.html">Text.h</a>.</p>
+
+</div>
+</div>
+<a id="a6de55ad48a320ce772316d216a0869a8" name="a6de55ad48a320ce772316d216a0869a8"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a6de55ad48a320ce772316d216a0869a8">&#9670;&#160;</a></span>getCoordinates()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">const std::array&lt; double, 3 &gt; &amp; Text::getCoordinates </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td> const</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p class="definition">Definition at line <a class="el" href="_text_8h_source.html#l00082">82</a> of file <a class="el" href="_text_8h_source.html">Text.h</a>.</p>
+
+</div>
+</div>
+<a id="af3a8e1addecb7f7966946d95d9ceca92" name="af3a8e1addecb7f7966946d95d9ceca92"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#af3a8e1addecb7f7966946d95d9ceca92">&#9670;&#160;</a></span>getJustification()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">const double &amp; Text::getJustification </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td> const</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p class="definition">Definition at line <a class="el" href="_text_8h_source.html#l00110">110</a> of file <a class="el" href="_text_8h_source.html">Text.h</a>.</p>
+
+</div>
+</div>
+<a id="aed678e304745921a99c1aeadf5b2d4f3" name="aed678e304745921a99c1aeadf5b2d4f3"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#aed678e304745921a99c1aeadf5b2d4f3">&#9670;&#160;</a></span>getSize()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">const double &amp; Text::getSize </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td> const</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p class="definition">Definition at line <a class="el" href="_text_8h_source.html#l00104">104</a> of file <a class="el" href="_text_8h_source.html">Text.h</a>.</p>
+
+</div>
+</div>
+<a id="a7b6390be5792e314d5d19cddf48039a7" name="a7b6390be5792e314d5d19cddf48039a7"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a7b6390be5792e314d5d19cddf48039a7">&#9670;&#160;</a></span>getSystem()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">const Text::CoordinateSystem &amp; Text::getSystem </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td> const</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p class="definition">Definition at line <a class="el" href="_text_8h_source.html#l00086">86</a> of file <a class="el" href="_text_8h_source.html">Text.h</a>.</p>
+
+</div>
+</div>
+<a id="af8864c14e46cb0111afaf67801d27072" name="af8864c14e46cb0111afaf67801d27072"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#af8864c14e46cb0111afaf67801d27072">&#9670;&#160;</a></span>getText()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">std::string_view Text::getText </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td> const</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p class="definition">Definition at line <a class="el" href="_text_8h_source.html#l00096">96</a> of file <a class="el" href="_text_8h_source.html">Text.h</a>.</p>
+
+</div>
+</div>
+<a id="a298e4eb782c1178a1401af1d5eabc6f1" name="a298e4eb782c1178a1401af1d5eabc6f1"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a298e4eb782c1178a1401af1d5eabc6f1">&#9670;&#160;</a></span>setAngle()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">void Text::setAngle </td>
+          <td>(</td>
+          <td class="paramtype">double&#160;</td>
+          <td class="paramname"><em>angle</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p class="definition">Definition at line <a class="el" href="_text_8h_source.html#l00098">98</a> of file <a class="el" href="_text_8h_source.html">Text.h</a>.</p>
+
+</div>
+</div>
+<a id="aee6bb54b44cbf273ffc937571c691b35" name="aee6bb54b44cbf273ffc937571c691b35"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#aee6bb54b44cbf273ffc937571c691b35">&#9670;&#160;</a></span>setColor()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">void Text::setColor </td>
+          <td>(</td>
+          <td class="paramtype">std::string_view&#160;</td>
+          <td class="paramname"><em>color</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p class="definition">Definition at line <a class="el" href="_text_8h_source.html#l00090">90</a> of file <a class="el" href="_text_8h_source.html">Text.h</a>.</p>
+
+</div>
+</div>
+<a id="aa9bfc70d180a20adcfc96de6f6569137" name="aa9bfc70d180a20adcfc96de6f6569137"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#aa9bfc70d180a20adcfc96de6f6569137">&#9670;&#160;</a></span>setCoordinates() <span class="overload">[1/2]</span></h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">void Text::setCoordinates </td>
+          <td>(</td>
+          <td class="paramtype">const std::array&lt; double, 3 &gt; &amp;&#160;</td>
+          <td class="paramname"><em>coordinates</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">CoordinateSystem&#160;</td>
+          <td class="paramname"><em>system</em> = <code>CoordinateSystem::DATA</code>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p class="definition">Definition at line <a class="el" href="_text_8h_source.html#l00076">76</a> of file <a class="el" href="_text_8h_source.html">Text.h</a>.</p>
+
+</div>
+</div>
+<a id="ad806363f729ba4e84444946e1d8ee5ab" name="ad806363f729ba4e84444946e1d8ee5ab"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ad806363f729ba4e84444946e1d8ee5ab">&#9670;&#160;</a></span>setCoordinates() <span class="overload">[2/2]</span></h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void Text::setCoordinates </td>
+          <td>(</td>
+          <td class="paramtype">double&#160;</td>
+          <td class="paramname"><em>x</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">double&#160;</td>
+          <td class="paramname"><em>y</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">double&#160;</td>
+          <td class="paramname"><em>z</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">CoordinateSystem&#160;</td>
+          <td class="paramname"><em>system</em> = <code>CoordinateSystem::DATA</code>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p class="definition">Definition at line <a class="el" href="_text_8cpp_source.html#l00018">18</a> of file <a class="el" href="_text_8cpp_source.html">Text.cpp</a>.</p>
+
+</div>
+</div>
+<a id="a43caf739ae05730993102de1e871f1ca" name="a43caf739ae05730993102de1e871f1ca"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a43caf739ae05730993102de1e871f1ca">&#9670;&#160;</a></span>setJustification()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">void Text::setJustification </td>
+          <td>(</td>
+          <td class="paramtype">double&#160;</td>
+          <td class="paramname"><em>justification</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p class="definition">Definition at line <a class="el" href="_text_8h_source.html#l00106">106</a> of file <a class="el" href="_text_8h_source.html">Text.h</a>.</p>
+
+</div>
+</div>
+<a id="a3d45345af93f9d381837126304bc8ae0" name="a3d45345af93f9d381837126304bc8ae0"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a3d45345af93f9d381837126304bc8ae0">&#9670;&#160;</a></span>setSize()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">void Text::setSize </td>
+          <td>(</td>
+          <td class="paramtype">double&#160;</td>
+          <td class="paramname"><em>size</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p class="definition">Definition at line <a class="el" href="_text_8h_source.html#l00102">102</a> of file <a class="el" href="_text_8h_source.html">Text.h</a>.</p>
+
+</div>
+</div>
+<a id="ab4173182aa59e8492b769b48eb6df444" name="ab4173182aa59e8492b769b48eb6df444"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ab4173182aa59e8492b769b48eb6df444">&#9670;&#160;</a></span>setText()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">void Text::setText </td>
+          <td>(</td>
+          <td class="paramtype">std::string_view&#160;</td>
+          <td class="paramname"><em>text</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p class="definition">Definition at line <a class="el" href="_text_8h_source.html#l00094">94</a> of file <a class="el" href="_text_8h_source.html">Text.h</a>.</p>
+
+</div>
+</div>
+<h2 class="groupheader">Member Data Documentation</h2>
+<a id="a5974b55fd118b1a2a00a256dad276dc1" name="a5974b55fd118b1a2a00a256dad276dc1"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a5974b55fd118b1a2a00a256dad276dc1">&#9670;&#160;</a></span>CenterJustification</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">constexpr double Text::CenterJustification = 0.5</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">static</span><span class="mlabel">constexpr</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p class="definition">Definition at line <a class="el" href="_text_8h_source.html#l00020">20</a> of file <a class="el" href="_text_8h_source.html">Text.h</a>.</p>
+
+</div>
+</div>
+<a id="ae5c73d4e42452ea66e4a169fe26b6730" name="ae5c73d4e42452ea66e4a169fe26b6730"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ae5c73d4e42452ea66e4a169fe26b6730">&#9670;&#160;</a></span>LeftJustification</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">constexpr double Text::LeftJustification = 0.0</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">static</span><span class="mlabel">constexpr</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p class="definition">Definition at line <a class="el" href="_text_8h_source.html#l00018">18</a> of file <a class="el" href="_text_8h_source.html">Text.h</a>.</p>
+
+</div>
+</div>
+<a id="a12aa6766386ca1204ccd1a224fd48095" name="a12aa6766386ca1204ccd1a224fd48095"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a12aa6766386ca1204ccd1a224fd48095">&#9670;&#160;</a></span>RightJustification</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">constexpr double Text::RightJustification = 1.0</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">static</span><span class="mlabel">constexpr</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p class="definition">Definition at line <a class="el" href="_text_8h_source.html#l00022">22</a> of file <a class="el" href="_text_8h_source.html">Text.h</a>.</p>
+
 </div>
 </div>
 <hr/>The documentation for this class was generated from the following files:<ul>
 <li><a class="el" href="_text_8h_source.html">Text.h</a></li>
-<li><b>Text.cpp</b></li>
+<li><a class="el" href="_text_8cpp_source.html">Text.cpp</a></li>
 </ul>
 </div><!-- contents -->
 <hr />
-<div style="margin:12px;color:#555555;">
-    Since FY2019 the NASA Ames PAH IR Spectroscopic Database is being supported through a directed Work Package at NASA Ames titled: "<i>Laboratory Astrophysics - The NASA Ames PAH IR Spectroscopic Database</i>".
+<div style="margin: 12px; color: #555555">
+  Since FY2019 the NASA Ames PAH IR Spectroscopic Database is being supported
+  through a directed Work Package at NASA Ames titled: "<i
+    >Laboratory Astrophysics - The NASA Ames PAH IR Spectroscopic Database</i
+  >".
 </div>
-<div style="margin:12px;color:#555555;">
-    Since FY2023 the NASA Ames PAH IR Spectroscopic Database is being supported through the Laboratory Astrophysics Rd 2 directed Work Package at NASA Ames.
+<div style="margin: 12px; color: #555555">
+  Since FY2023 the NASA Ames PAH IR Spectroscopic Database is being supported
+  through the Laboratory Astrophysics Rd 2 directed Work Package at NASA Ames.
 </div>
-<div style="margin:12px">
-    © Copyright 2021-2023, Christiaan Boersma
-</div>
+<div style="margin: 12px">© Copyright 2021-2025, Christiaan Boersma</div>

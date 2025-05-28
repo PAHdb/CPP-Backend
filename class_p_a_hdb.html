@@ -81,68 +81,476 @@ $(function() {
 <table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="pub-types" name="pub-types"></a>
 Public Types</h2></td></tr>
-<tr class="memitem:a465fe80da9ae3cc6776aeefb92cfe29b" id="r_a465fe80da9ae3cc6776aeefb92cfe29b"><td class="memItemLeft" align="right" valign="top"><a id="a465fe80da9ae3cc6776aeefb92cfe29b" name="a465fe80da9ae3cc6776aeefb92cfe29b"></a>enum class &#160;</td><td class="memItemRight" valign="bottom"><b>Database</b> : char { <b>Theory</b>
+<tr class="memitem:a465fe80da9ae3cc6776aeefb92cfe29b" id="r_a465fe80da9ae3cc6776aeefb92cfe29b"><td class="memItemLeft" align="right" valign="top">enum class &#160;</td><td class="memItemRight" valign="bottom"><b>Database</b> : char { <b>Theory</b>
 , <b>Experiment</b>
+, <b>Anharmonic</b>
  }</td></tr>
 <tr class="separator:a465fe80da9ae3cc6776aeefb92cfe29b"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="pub-methods" name="pub-methods"></a>
 Public Member Functions</h2></td></tr>
-<tr class="memitem:a28eee2de1edff6009473b341bae467fe" id="r_a28eee2de1edff6009473b341bae467fe"><td class="memItemLeft" align="right" valign="top"><a id="a28eee2de1edff6009473b341bae467fe" name="a28eee2de1edff6009473b341bae467fe"></a>
-void&#160;</td><td class="memItemRight" valign="bottom"><b>connect</b> (std::string_view database, const std::string_view host, std::string_view username, const std::string_view password, int port, bool compress, int timeout, const std::string_view socket)</td></tr>
+<tr class="memitem:a28eee2de1edff6009473b341bae467fe" id="r_a28eee2de1edff6009473b341bae467fe"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_p_a_hdb.html#a28eee2de1edff6009473b341bae467fe">connect</a> (std::string_view database, const std::string_view host, std::string_view username, const std::string_view password, int port, bool compress, int timeout, const std::string_view socket)</td></tr>
 <tr class="separator:a28eee2de1edff6009473b341bae467fe"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a41d02e09aa888bb99bb99ca131667bc3" id="r_a41d02e09aa888bb99bb99ca131667bc3"><td class="memItemLeft" align="right" valign="top"><a id="a41d02e09aa888bb99bb99ca131667bc3" name="a41d02e09aa888bb99bb99ca131667bc3"></a>
-void&#160;</td><td class="memItemRight" valign="bottom"><b>setTable</b> (Database table)</td></tr>
+<tr class="memitem:a41d02e09aa888bb99bb99ca131667bc3" id="r_a41d02e09aa888bb99bb99ca131667bc3"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_p_a_hdb.html#a41d02e09aa888bb99bb99ca131667bc3">setTable</a> (Database table)</td></tr>
 <tr class="separator:a41d02e09aa888bb99bb99ca131667bc3"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:adb35f6d5738a9016176dedc8f83cc061" id="r_adb35f6d5738a9016176dedc8f83cc061"><td class="memItemLeft" align="right" valign="top"><a id="adb35f6d5738a9016176dedc8f83cc061" name="adb35f6d5738a9016176dedc8f83cc061"></a>
-void&#160;</td><td class="memItemRight" valign="bottom"><b>setProgress</b> (double progress)</td></tr>
+<tr class="memitem:adb35f6d5738a9016176dedc8f83cc061" id="r_adb35f6d5738a9016176dedc8f83cc061"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_p_a_hdb.html#adb35f6d5738a9016176dedc8f83cc061">setProgress</a> (double progress)</td></tr>
 <tr class="separator:adb35f6d5738a9016176dedc8f83cc061"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a3665bec07219c5d3b6ed1f3e90f3ce53" id="r_a3665bec07219c5d3b6ed1f3e90f3ce53"><td class="memItemLeft" align="right" valign="top"><a id="a3665bec07219c5d3b6ed1f3e90f3ce53" name="a3665bec07219c5d3b6ed1f3e90f3ce53"></a>
-void&#160;</td><td class="memItemRight" valign="bottom"><b>setError</b> (const char *error)</td></tr>
+<tr class="memitem:a3665bec07219c5d3b6ed1f3e90f3ce53" id="r_a3665bec07219c5d3b6ed1f3e90f3ce53"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_p_a_hdb.html#a3665bec07219c5d3b6ed1f3e90f3ce53">setError</a> (const char *error)</td></tr>
 <tr class="separator:a3665bec07219c5d3b6ed1f3e90f3ce53"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a67f5e25240a5c27e46efea4f246e9918" id="r_a67f5e25240a5c27e46efea4f246e9918"><td class="memItemLeft" align="right" valign="top"><a id="a67f5e25240a5c27e46efea4f246e9918" name="a67f5e25240a5c27e46efea4f246e9918"></a>
-std::vector&lt; std::vector&lt; std::pair&lt; double, double &gt; &gt; &gt;&#160;</td><td class="memItemRight" valign="bottom"><b>getTransitionsFromUIDsAndVersion</b> (const std::vector&lt; int &gt; &amp;uids, int version)</td></tr>
+<tr class="memitem:a67f5e25240a5c27e46efea4f246e9918" id="r_a67f5e25240a5c27e46efea4f246e9918"><td class="memItemLeft" align="right" valign="top">std::vector&lt; std::vector&lt; std::pair&lt; double, double &gt; &gt; &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_p_a_hdb.html#a67f5e25240a5c27e46efea4f246e9918">getTransitionsFromUIDsAndVersion</a> (const std::vector&lt; int &gt; &amp;uids, int version)</td></tr>
 <tr class="separator:a67f5e25240a5c27e46efea4f246e9918"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:aa10a1af832bcffcf84f127b53f2e262e" id="r_aa10a1af832bcffcf84f127b53f2e262e"><td class="memItemLeft" align="right" valign="top"><a id="aa10a1af832bcffcf84f127b53f2e262e" name="aa10a1af832bcffcf84f127b53f2e262e"></a>
-std::vector&lt; std::vector&lt; std::pair&lt; double, double &gt; &gt; &gt;&#160;</td><td class="memItemRight" valign="bottom"><b>getTransitionsFromUIDAndVersion</b> (int uid, int version)</td></tr>
+<tr class="memitem:aa10a1af832bcffcf84f127b53f2e262e" id="r_aa10a1af832bcffcf84f127b53f2e262e"><td class="memItemLeft" align="right" valign="top">std::vector&lt; std::vector&lt; std::pair&lt; double, double &gt; &gt; &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_p_a_hdb.html#aa10a1af832bcffcf84f127b53f2e262e">getTransitionsFromUIDAndVersion</a> (int uid, int version)</td></tr>
 <tr class="separator:aa10a1af832bcffcf84f127b53f2e262e"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a8577e2a37bdc7d7cf8c04f56d54bdcb9" id="r_a8577e2a37bdc7d7cf8c04f56d54bdcb9"><td class="memItemLeft" align="right" valign="top"><a id="a8577e2a37bdc7d7cf8c04f56d54bdcb9" name="a8577e2a37bdc7d7cf8c04f56d54bdcb9"></a>
-std::vector&lt; std::vector&lt; std::pair&lt; double, double &gt; &gt; &gt;&#160;</td><td class="memItemRight" valign="bottom"><b>getTransitionsFromVersion</b> (int version, std::vector&lt; int &gt; &amp;ids)</td></tr>
+<tr class="memitem:a8577e2a37bdc7d7cf8c04f56d54bdcb9" id="r_a8577e2a37bdc7d7cf8c04f56d54bdcb9"><td class="memItemLeft" align="right" valign="top">std::vector&lt; std::vector&lt; std::pair&lt; double, double &gt; &gt; &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_p_a_hdb.html#a8577e2a37bdc7d7cf8c04f56d54bdcb9">getTransitionsFromVersion</a> (int version, std::vector&lt; int &gt; &amp;ids)</td></tr>
 <tr class="separator:a8577e2a37bdc7d7cf8c04f56d54bdcb9"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:aefae950e78c41d68f1ec76b20d79b314" id="r_aefae950e78c41d68f1ec76b20d79b314"><td class="memItemLeft" align="right" valign="top"><a id="aefae950e78c41d68f1ec76b20d79b314" name="aefae950e78c41d68f1ec76b20d79b314"></a>
-std::vector&lt; std::vector&lt; std::pair&lt; double, double &gt; &gt; &gt;&#160;</td><td class="memItemRight" valign="bottom"><b>getTransitionsFromIds</b> (const std::vector&lt; int &gt; &amp;ids)</td></tr>
+<tr class="memitem:aefae950e78c41d68f1ec76b20d79b314" id="r_aefae950e78c41d68f1ec76b20d79b314"><td class="memItemLeft" align="right" valign="top">std::vector&lt; std::vector&lt; std::pair&lt; double, double &gt; &gt; &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_p_a_hdb.html#aefae950e78c41d68f1ec76b20d79b314">getTransitionsFromIds</a> (const std::vector&lt; int &gt; &amp;ids)</td></tr>
 <tr class="separator:aefae950e78c41d68f1ec76b20d79b314"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a73912686df377d0d7afb5184fcf47413" id="r_a73912686df377d0d7afb5184fcf47413"><td class="memItemLeft" align="right" valign="top"><a id="a73912686df377d0d7afb5184fcf47413" name="a73912686df377d0d7afb5184fcf47413"></a>
-std::vector&lt; std::vector&lt; std::pair&lt; double, double &gt; &gt; &gt;&#160;</td><td class="memItemRight" valign="bottom"><b>getTransitionsFromId</b> (int id)</td></tr>
+<tr class="memitem:a73912686df377d0d7afb5184fcf47413" id="r_a73912686df377d0d7afb5184fcf47413"><td class="memItemLeft" align="right" valign="top">std::vector&lt; std::vector&lt; std::pair&lt; double, double &gt; &gt; &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_p_a_hdb.html#a73912686df377d0d7afb5184fcf47413">getTransitionsFromId</a> (int id)</td></tr>
 <tr class="separator:a73912686df377d0d7afb5184fcf47413"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a78acf14bc1e7b47cf8551c1ef2580321" id="r_a78acf14bc1e7b47cf8551c1ef2580321"><td class="memItemLeft" align="right" valign="top"><a id="a78acf14bc1e7b47cf8551c1ef2580321" name="a78acf14bc1e7b47cf8551c1ef2580321"></a>
-std::vector&lt; std::vector&lt; std::pair&lt; double, double &gt; &gt; &gt;&#160;</td><td class="memItemRight" valign="bottom"><b>getExperimentalAndTheoreticalTransitionsFromId</b> (int id)</td></tr>
+<tr class="memitem:a78acf14bc1e7b47cf8551c1ef2580321" id="r_a78acf14bc1e7b47cf8551c1ef2580321"><td class="memItemLeft" align="right" valign="top">std::vector&lt; std::vector&lt; std::pair&lt; double, double &gt; &gt; &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_p_a_hdb.html#a78acf14bc1e7b47cf8551c1ef2580321">getExperimentalAndTheoreticalTransitionsFromId</a> (int id)</td></tr>
 <tr class="separator:a78acf14bc1e7b47cf8551c1ef2580321"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a8a62feb8be5f173246b475d689c012f3" id="r_a8a62feb8be5f173246b475d689c012f3"><td class="memItemLeft" align="right" valign="top"><a id="a8a62feb8be5f173246b475d689c012f3" name="a8a62feb8be5f173246b475d689c012f3"></a>
-std::vector&lt; <a class="el" href="class_p_a_h_geometry.html">PAHGeometry</a> &gt;&#160;</td><td class="memItemRight" valign="bottom"><b>getGeometriesFromIds</b> (const std::vector&lt; int &gt; &amp;ids)</td></tr>
+<tr class="memitem:a8a62feb8be5f173246b475d689c012f3" id="r_a8a62feb8be5f173246b475d689c012f3"><td class="memItemLeft" align="right" valign="top">std::vector&lt; <a class="el" href="class_p_a_h_geometry.html">PAHGeometry</a> &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_p_a_hdb.html#a8a62feb8be5f173246b475d689c012f3">getGeometriesFromIds</a> (const std::vector&lt; int &gt; &amp;ids)</td></tr>
 <tr class="separator:a8a62feb8be5f173246b475d689c012f3"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a3f41ce0c1cf9fb3ec2e30f422ee4b9f3" id="r_a3f41ce0c1cf9fb3ec2e30f422ee4b9f3"><td class="memItemLeft" align="right" valign="top"><a id="a3f41ce0c1cf9fb3ec2e30f422ee4b9f3" name="a3f41ce0c1cf9fb3ec2e30f422ee4b9f3"></a>
-std::vector&lt; sql_properties &gt;&#160;</td><td class="memItemRight" valign="bottom"><b>getPropertiesByUIDsAndVersion</b> (const std::vector&lt; int &gt; &amp;uids, int version)</td></tr>
+<tr class="memitem:a3f41ce0c1cf9fb3ec2e30f422ee4b9f3" id="r_a3f41ce0c1cf9fb3ec2e30f422ee4b9f3"><td class="memItemLeft" align="right" valign="top">std::vector&lt; sql_properties &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_p_a_hdb.html#a3f41ce0c1cf9fb3ec2e30f422ee4b9f3">getPropertiesByUIDsAndVersion</a> (const std::vector&lt; int &gt; &amp;uids, int version)</td></tr>
 <tr class="separator:a3f41ce0c1cf9fb3ec2e30f422ee4b9f3"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a17d975e115d7a459a79cf53d0c9cdfb7" id="r_a17d975e115d7a459a79cf53d0c9cdfb7"><td class="memItemLeft" align="right" valign="top"><a id="a17d975e115d7a459a79cf53d0c9cdfb7" name="a17d975e115d7a459a79cf53d0c9cdfb7"></a>
-std::vector&lt; sql_properties &gt;&#160;</td><td class="memItemRight" valign="bottom"><b>getPropertiesByIDs</b> (const std::vector&lt; int &gt; &amp;ids)</td></tr>
+<tr class="memitem:a17d975e115d7a459a79cf53d0c9cdfb7" id="r_a17d975e115d7a459a79cf53d0c9cdfb7"><td class="memItemLeft" align="right" valign="top">std::vector&lt; sql_properties &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_p_a_hdb.html#a17d975e115d7a459a79cf53d0c9cdfb7">getPropertiesByIDs</a> (const std::vector&lt; int &gt; &amp;ids)</td></tr>
 <tr class="separator:a17d975e115d7a459a79cf53d0c9cdfb7"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a5081175d9c7d9748c61bcd6dd1c02617" id="r_a5081175d9c7d9748c61bcd6dd1c02617"><td class="memItemLeft" align="right" valign="top"><a id="a5081175d9c7d9748c61bcd6dd1c02617" name="a5081175d9c7d9748c61bcd6dd1c02617"></a>
-std::vector&lt; std::string &gt;&#160;</td><td class="memItemRight" valign="bottom"><b>getFormulaeFromIds</b> (const std::vector&lt; int &gt; &amp;ids)</td></tr>
+<tr class="memitem:a5081175d9c7d9748c61bcd6dd1c02617" id="r_a5081175d9c7d9748c61bcd6dd1c02617"><td class="memItemLeft" align="right" valign="top">std::vector&lt; std::string &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_p_a_hdb.html#a5081175d9c7d9748c61bcd6dd1c02617">getFormulaeFromIds</a> (const std::vector&lt; int &gt; &amp;ids)</td></tr>
 <tr class="separator:a5081175d9c7d9748c61bcd6dd1c02617"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
+<a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
+<div class="textblock">
+<p class="definition">Definition at line <a class="el" href="_p_a_hdb_8h_source.html#l00029">29</a> of file <a class="el" href="_p_a_hdb_8h_source.html">PAHdb.h</a>.</p>
+</div><h2 class="groupheader">Member Enumeration Documentation</h2>
+<a id="a465fe80da9ae3cc6776aeefb92cfe29b" name="a465fe80da9ae3cc6776aeefb92cfe29b"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a465fe80da9ae3cc6776aeefb92cfe29b">&#9670;&#160;</a></span>Database</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">enum class PAHdb::Database : char</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">strong</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p class="definition">Definition at line <a class="el" href="_p_a_hdb_8h_source.html#l00034">34</a> of file <a class="el" href="_p_a_hdb_8h_source.html">PAHdb.h</a>.</p>
+
+</div>
+</div>
+<h2 class="groupheader">Member Function Documentation</h2>
+<a id="a28eee2de1edff6009473b341bae467fe" name="a28eee2de1edff6009473b341bae467fe"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a28eee2de1edff6009473b341bae467fe">&#9670;&#160;</a></span>connect()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void PAHdb::connect </td>
+          <td>(</td>
+          <td class="paramtype">std::string_view&#160;</td>
+          <td class="paramname"><em>database</em> = <code>&quot;&quot;</code>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const std::string_view&#160;</td>
+          <td class="paramname"><em>host</em> = <code>&quot;&quot;</code>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">std::string_view&#160;</td>
+          <td class="paramname"><em>username</em> = <code>&quot;&quot;</code>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const std::string_view&#160;</td>
+          <td class="paramname"><em>password</em> = <code>&quot;&quot;</code>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">int&#160;</td>
+          <td class="paramname"><em>port</em> = <code>0</code>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">bool&#160;</td>
+          <td class="paramname"><em>compress</em> = <code>false</code>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">int&#160;</td>
+          <td class="paramname"><em>timeout</em> = <code>0</code>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const std::string_view&#160;</td>
+          <td class="paramname"><em>socket</em> = <code>&quot;&quot;</code>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p class="definition">Definition at line <a class="el" href="_p_a_hdb_8cpp_source.html#l00003">3</a> of file <a class="el" href="_p_a_hdb_8cpp_source.html">PAHdb.cpp</a>.</p>
+
+</div>
+</div>
+<a id="a78acf14bc1e7b47cf8551c1ef2580321" name="a78acf14bc1e7b47cf8551c1ef2580321"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a78acf14bc1e7b47cf8551c1ef2580321">&#9670;&#160;</a></span>getExperimentalAndTheoreticalTransitionsFromId()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">std::vector&lt; std::vector&lt; std::pair&lt; double, double &gt; &gt; &gt; PAHdb::getExperimentalAndTheoreticalTransitionsFromId </td>
+          <td>(</td>
+          <td class="paramtype">int&#160;</td>
+          <td class="paramname"><em>id</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p class="definition">Definition at line <a class="el" href="_p_a_hdb_8cpp_source.html#l00175">175</a> of file <a class="el" href="_p_a_hdb_8cpp_source.html">PAHdb.cpp</a>.</p>
+
+</div>
+</div>
+<a id="a5081175d9c7d9748c61bcd6dd1c02617" name="a5081175d9c7d9748c61bcd6dd1c02617"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a5081175d9c7d9748c61bcd6dd1c02617">&#9670;&#160;</a></span>getFormulaeFromIds()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">std::vector&lt; std::string &gt; PAHdb::getFormulaeFromIds </td>
+          <td>(</td>
+          <td class="paramtype">const std::vector&lt; int &gt; &amp;&#160;</td>
+          <td class="paramname"><em>ids</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p class="definition">Definition at line <a class="el" href="_p_a_hdb_8cpp_source.html#l00404">404</a> of file <a class="el" href="_p_a_hdb_8cpp_source.html">PAHdb.cpp</a>.</p>
+
+</div>
+</div>
+<a id="a8a62feb8be5f173246b475d689c012f3" name="a8a62feb8be5f173246b475d689c012f3"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a8a62feb8be5f173246b475d689c012f3">&#9670;&#160;</a></span>getGeometriesFromIds()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">std::vector&lt; <a class="el" href="class_p_a_h_geometry.html">PAHGeometry</a> &gt; PAHdb::getGeometriesFromIds </td>
+          <td>(</td>
+          <td class="paramtype">const std::vector&lt; int &gt; &amp;&#160;</td>
+          <td class="paramname"><em>ids</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p class="definition">Definition at line <a class="el" href="_p_a_hdb_8cpp_source.html#l00340">340</a> of file <a class="el" href="_p_a_hdb_8cpp_source.html">PAHdb.cpp</a>.</p>
+
+</div>
+</div>
+<a id="a17d975e115d7a459a79cf53d0c9cdfb7" name="a17d975e115d7a459a79cf53d0c9cdfb7"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a17d975e115d7a459a79cf53d0c9cdfb7">&#9670;&#160;</a></span>getPropertiesByIDs()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">std::vector&lt; sql_properties &gt; PAHdb::getPropertiesByIDs </td>
+          <td>(</td>
+          <td class="paramtype">const std::vector&lt; int &gt; &amp;&#160;</td>
+          <td class="paramname"><em>ids</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p class="definition">Definition at line <a class="el" href="_p_a_hdb_8cpp_source.html#l00505">505</a> of file <a class="el" href="_p_a_hdb_8cpp_source.html">PAHdb.cpp</a>.</p>
+
+</div>
+</div>
+<a id="a3f41ce0c1cf9fb3ec2e30f422ee4b9f3" name="a3f41ce0c1cf9fb3ec2e30f422ee4b9f3"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a3f41ce0c1cf9fb3ec2e30f422ee4b9f3">&#9670;&#160;</a></span>getPropertiesByUIDsAndVersion()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">std::vector&lt; sql_properties &gt; PAHdb::getPropertiesByUIDsAndVersion </td>
+          <td>(</td>
+          <td class="paramtype">const std::vector&lt; int &gt; &amp;&#160;</td>
+          <td class="paramname"><em>uids</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">int&#160;</td>
+          <td class="paramname"><em>version</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p class="definition">Definition at line <a class="el" href="_p_a_hdb_8cpp_source.html#l00462">462</a> of file <a class="el" href="_p_a_hdb_8cpp_source.html">PAHdb.cpp</a>.</p>
+
+</div>
+</div>
+<a id="a73912686df377d0d7afb5184fcf47413" name="a73912686df377d0d7afb5184fcf47413"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a73912686df377d0d7afb5184fcf47413">&#9670;&#160;</a></span>getTransitionsFromId()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">std::vector&lt; std::vector&lt; std::pair&lt; double, double &gt; &gt; &gt; PAHdb::getTransitionsFromId </td>
+          <td>(</td>
+          <td class="paramtype">int&#160;</td>
+          <td class="paramname"><em>id</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p class="definition">Definition at line <a class="el" href="_p_a_hdb_8h_source.html#l00083">83</a> of file <a class="el" href="_p_a_hdb_8h_source.html">PAHdb.h</a>.</p>
+
+</div>
+</div>
+<a id="aefae950e78c41d68f1ec76b20d79b314" name="aefae950e78c41d68f1ec76b20d79b314"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#aefae950e78c41d68f1ec76b20d79b314">&#9670;&#160;</a></span>getTransitionsFromIds()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">std::vector&lt; std::vector&lt; std::pair&lt; double, double &gt; &gt; &gt; PAHdb::getTransitionsFromIds </td>
+          <td>(</td>
+          <td class="paramtype">const std::vector&lt; int &gt; &amp;&#160;</td>
+          <td class="paramname"><em>ids</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p class="definition">Definition at line <a class="el" href="_p_a_hdb_8cpp_source.html#l00123">123</a> of file <a class="el" href="_p_a_hdb_8cpp_source.html">PAHdb.cpp</a>.</p>
+
+</div>
+</div>
+<a id="aa10a1af832bcffcf84f127b53f2e262e" name="aa10a1af832bcffcf84f127b53f2e262e"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#aa10a1af832bcffcf84f127b53f2e262e">&#9670;&#160;</a></span>getTransitionsFromUIDAndVersion()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">std::vector&lt; std::vector&lt; std::pair&lt; double, double &gt; &gt; &gt; PAHdb::getTransitionsFromUIDAndVersion </td>
+          <td>(</td>
+          <td class="paramtype">int&#160;</td>
+          <td class="paramname"><em>uid</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">int&#160;</td>
+          <td class="paramname"><em>version</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p class="definition">Definition at line <a class="el" href="_p_a_hdb_8h_source.html#l00088">88</a> of file <a class="el" href="_p_a_hdb_8h_source.html">PAHdb.h</a>.</p>
+
+</div>
+</div>
+<a id="a67f5e25240a5c27e46efea4f246e9918" name="a67f5e25240a5c27e46efea4f246e9918"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a67f5e25240a5c27e46efea4f246e9918">&#9670;&#160;</a></span>getTransitionsFromUIDsAndVersion()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">std::vector&lt; std::vector&lt; std::pair&lt; double, double &gt; &gt; &gt; PAHdb::getTransitionsFromUIDsAndVersion </td>
+          <td>(</td>
+          <td class="paramtype">const std::vector&lt; int &gt; &amp;&#160;</td>
+          <td class="paramname"><em>uids</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">int&#160;</td>
+          <td class="paramname"><em>version</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p class="definition">Definition at line <a class="el" href="_p_a_hdb_8cpp_source.html#l00020">20</a> of file <a class="el" href="_p_a_hdb_8cpp_source.html">PAHdb.cpp</a>.</p>
+
+</div>
+</div>
+<a id="a8577e2a37bdc7d7cf8c04f56d54bdcb9" name="a8577e2a37bdc7d7cf8c04f56d54bdcb9"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a8577e2a37bdc7d7cf8c04f56d54bdcb9">&#9670;&#160;</a></span>getTransitionsFromVersion()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">std::vector&lt; std::vector&lt; std::pair&lt; double, double &gt; &gt; &gt; PAHdb::getTransitionsFromVersion </td>
+          <td>(</td>
+          <td class="paramtype">int&#160;</td>
+          <td class="paramname"><em>version</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">std::vector&lt; int &gt; &amp;&#160;</td>
+          <td class="paramname"><em>ids</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p class="definition">Definition at line <a class="el" href="_p_a_hdb_8cpp_source.html#l00079">79</a> of file <a class="el" href="_p_a_hdb_8cpp_source.html">PAHdb.cpp</a>.</p>
+
+</div>
+</div>
+<a id="a3665bec07219c5d3b6ed1f3e90f3ce53" name="a3665bec07219c5d3b6ed1f3e90f3ce53"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a3665bec07219c5d3b6ed1f3e90f3ce53">&#9670;&#160;</a></span>setError()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void PAHdb::setError </td>
+          <td>(</td>
+          <td class="paramtype">const char *&#160;</td>
+          <td class="paramname"><em>error</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p class="definition">Definition at line <a class="el" href="_p_a_hdb_8cpp_source.html#l00593">593</a> of file <a class="el" href="_p_a_hdb_8cpp_source.html">PAHdb.cpp</a>.</p>
+
+</div>
+</div>
+<a id="adb35f6d5738a9016176dedc8f83cc061" name="adb35f6d5738a9016176dedc8f83cc061"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#adb35f6d5738a9016176dedc8f83cc061">&#9670;&#160;</a></span>setProgress()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void PAHdb::setProgress </td>
+          <td>(</td>
+          <td class="paramtype">double&#160;</td>
+          <td class="paramname"><em>progress</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p class="definition">Definition at line <a class="el" href="_p_a_hdb_8cpp_source.html#l00570">570</a> of file <a class="el" href="_p_a_hdb_8cpp_source.html">PAHdb.cpp</a>.</p>
+
+</div>
+</div>
+<a id="a41d02e09aa888bb99bb99ca131667bc3" name="a41d02e09aa888bb99bb99ca131667bc3"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a41d02e09aa888bb99bb99ca131667bc3">&#9670;&#160;</a></span>setTable()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">void PAHdb::setTable </td>
+          <td>(</td>
+          <td class="paramtype">Database&#160;</td>
+          <td class="paramname"><em>table</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p class="definition">Definition at line <a class="el" href="_p_a_hdb_8h_source.html#l00080">80</a> of file <a class="el" href="_p_a_hdb_8h_source.html">PAHdb.h</a>.</p>
+
+</div>
+</div>
 <hr/>The documentation for this class was generated from the following files:<ul>
 <li><a class="el" href="_p_a_hdb_8h_source.html">PAHdb.h</a></li>
-<li><b>PAHdb.cpp</b></li>
+<li><a class="el" href="_p_a_hdb_8cpp_source.html">PAHdb.cpp</a></li>
 </ul>
 </div><!-- contents -->
 <hr />
-<div style="margin:12px;color:#555555;">
-    Since FY2019 the NASA Ames PAH IR Spectroscopic Database is being supported through a directed Work Package at NASA Ames titled: "<i>Laboratory Astrophysics - The NASA Ames PAH IR Spectroscopic Database</i>".
+<div style="margin: 12px; color: #555555">
+  Since FY2019 the NASA Ames PAH IR Spectroscopic Database is being supported
+  through a directed Work Package at NASA Ames titled: "<i
+    >Laboratory Astrophysics - The NASA Ames PAH IR Spectroscopic Database</i
+  >".
 </div>
-<div style="margin:12px;color:#555555;">
-    Since FY2023 the NASA Ames PAH IR Spectroscopic Database is being supported through the Laboratory Astrophysics Rd 2 directed Work Package at NASA Ames.
+<div style="margin: 12px; color: #555555">
+  Since FY2023 the NASA Ames PAH IR Spectroscopic Database is being supported
+  through the Laboratory Astrophysics Rd 2 directed Work Package at NASA Ames.
 </div>
-<div style="margin:12px">
-    © Copyright 2021-2023, Christiaan Boersma
-</div>
+<div style="margin: 12px">© Copyright 2021-2025, Christiaan Boersma</div>
