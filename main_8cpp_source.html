@@ -552,8 +552,8 @@ $(document).ready(function() { init_codefold(0); });
 <div class="line"><a id="l00475" name="l00475"></a><span class="lineno">  475</span> </div>
 <div class="line"><a id="l00476" name="l00476"></a><span class="lineno">  476</span>  <span class="keywordtype">int</span> npanels;</div>
 <div class="line"><a id="l00477" name="l00477"></a><span class="lineno">  477</span> </div>
-<div class="line"><a id="l00478" name="l00478"></a><span class="lineno">  478</span>  std::array&lt;const char *, 3&gt; annotations = {<span class="stringliteral">&quot;Laboratory&quot;</span>, <span class="stringliteral">&quot;Harmonic Theory&quot;</span>,</div>
-<div class="line"><a id="l00479" name="l00479"></a><span class="lineno">  479</span>                                             <span class="stringliteral">&quot;Anharmonic Theory&quot;</span>};</div>
+<div class="line"><a id="l00478" name="l00478"></a><span class="lineno">  478</span>  std::array&lt;const char *, 3&gt; annotations = {</div>
+<div class="line"><a id="l00479" name="l00479"></a><span class="lineno">  479</span>      <span class="stringliteral">&quot;Laboratory (Processed)&quot;</span>, <span class="stringliteral">&quot;Harmonic Theory&quot;</span>, <span class="stringliteral">&quot;Anharmonic Theory&quot;</span>};</div>
 <div class="line"><a id="l00480" name="l00480"></a><span class="lineno">  480</span> </div>
 <div class="line"><a id="l00481" name="l00481"></a><span class="lineno">  481</span>  <span class="keywordflow">switch</span> (parameters.getTool()) {</div>
 <div class="line"><a id="l00482" name="l00482"></a><span class="lineno">  482</span> </div>
@@ -1149,8 +1149,8 @@ $(document).ready(function() { init_codefold(0); });
 <div class="line"><a id="l01072" name="l01072"></a><span class="lineno"> 1072</span> </div>
 <div class="line"><a id="l01073" name="l01073"></a><span class="lineno"> 1073</span>    text.setSize(1.0);</div>
 <div class="line"><a id="l01074" name="l01074"></a><span class="lineno"> 1074</span> </div>
-<div class="line"><a id="l01075" name="l01075"></a><span class="lineno"> 1075</span>    text.setCoordinates(0.0723,</div>
-<div class="line"><a id="l01076" name="l01076"></a><span class="lineno"> 1076</span>                        margins[0] + (margins[1] - margins[0]) / npanels, 0.0);</div>
+<div class="line"><a id="l01075" name="l01075"></a><span class="lineno"> 1075</span>    text.setCoordinates(0.0723, margins[0] + (margins[1] - margins[0]) / 2.0,</div>
+<div class="line"><a id="l01076" name="l01076"></a><span class="lineno"> 1076</span>                        0.0);</div>
 <div class="line"><a id="l01077" name="l01077"></a><span class="lineno"> 1077</span> </div>
 <div class="line"><a id="l01078" name="l01078"></a><span class="lineno"> 1078</span>    canvas.add(text);</div>
 <div class="line"><a id="l01079" name="l01079"></a><span class="lineno"> 1079</span> </div>
