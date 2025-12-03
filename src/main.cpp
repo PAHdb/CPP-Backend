@@ -475,8 +475,8 @@ int main(const int argc, const char *argv[], char ** /* envp */) {
 
   int npanels;
 
-  std::array<const char *, 3> annotations = {"Laboratory", "Harmonic Theory",
-                                             "Anharmonic Theory"};
+  std::array<const char *, 3> annotations = {
+      "Laboratory (Processed)", "Harmonic Theory", "Anharmonic Theory"};
 
   switch (parameters.getTool()) {
 
@@ -1072,8 +1072,8 @@ int main(const int argc, const char *argv[], char ** /* envp */) {
 
     text.setSize(1.0);
 
-    text.setCoordinates(0.0723,
-                        margins[0] + (margins[1] - margins[0]) / npanels, 0.0);
+    text.setCoordinates(0.0723, margins[0] + (margins[1] - margins[0]) / 2.0,
+                        0.0);
 
     canvas.add(text);
 
