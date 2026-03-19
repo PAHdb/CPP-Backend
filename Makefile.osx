@@ -1,6 +1,6 @@
 CC        =  g++-15
-CCFLAGS   = -I./include -I/usr/local/include -I../local/include/ -I/Applications/MAMP/Library/bin/mysql80/include
-CCLIB     = -L../local/lib -lmysqlpp -L/Applications/MAMP/Library/bin/mysql80/lib -lmysqlclient -L/usr/local/lib -lplplotcxx -lgsl -lcfitsio -ltinyxml2 -lCCfits
+CCFLAGS   = -I./include -I/opt/homebrew/include -I../local/include/ -I/Applications/MAMP/Library/bin/mysql80/include
+CCLIB     = -L../local/lib -lmysqlpp -L/Applications/MAMP/Library/bin/mysql80/lib -lmysqlclient -L/opt/homebrew/lib -lplplotcxx -lgsl -lcfitsio -ltinyxml2 -lCCfits
 CCOPT     = -std=c++17 -Wall -fpermissive -O3 -flto#-g -DDEBUG -Wextra -O0 -fsanitize=address,float-divide-by-zero,bounds,alignment,object-size,float-cast-overflow,shift,integer-divide-by-zero,unreachable,vla-bound,null,return,signed-integer-overflow
 
 SRC       = src/
@@ -51,7 +51,7 @@ ${OBJ}PAHEmissionModel.o : ${SRC}PAHEmissionModel.cpp ${INC}PAHEmissionModel.h $
 ${OBJ}SpectralFitter.o : ${SRC}SpectralFitter.cpp ${INC}SpectralFitter.h ${INC}Exception.h ${OBJ}NNLS.o
 	${CC} ${CCFLAGS} ${CCOPT} -o $@ -c ${SRC}SpectralFitter.cpp
 
-${OBJ}NNLS.o : ${SRC}NNLS.cpp ${INC}NNLS.h 
+${OBJ}NNLS.o : ${SRC}NNLS.cpp ${INC}NNLS.h
 	${CC} ${CCFLAGS} ${CCOPT} -o $@ -c ${SRC}NNLS.cpp
 
 ${OBJ}PAHdb.o : ${SRC}PAHdb.cpp ${INC}PAHdb.h ${INC}Exception.h ${OBJ}PAHGeometry.o
