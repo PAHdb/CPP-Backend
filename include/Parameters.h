@@ -79,6 +79,7 @@ public:
   bool isPNG();
   bool isJPEG();
   bool isPostscript();
+  bool isPDF();
 
 private:
   TCLAP::CmdLine _cmdline;
@@ -110,6 +111,7 @@ private:
   bool _png;
   bool _jpeg;
   bool _postscript;
+  bool _pdf;
 
   std::vector<double> _temperatures;
 
@@ -173,6 +175,8 @@ inline bool Parameters::isPNG() { return (_png); }
 inline bool Parameters::isJPEG() { return (_jpeg); }
 
 inline bool Parameters::isPostscript() { return (_postscript); }
+
+inline bool Parameters::isPDF() { return (_pdf); }
 
 inline std::vector<int> const &Parameters::getIds() const { return (_ids); }
 

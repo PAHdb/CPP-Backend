@@ -72,6 +72,8 @@ public:
 
   void paintOnPostscript(std::string_view filename);
 
+  void paintOnPDF(std::string_view filename);
+
   void paintOnPNG(std::string_view filename);
 
   void paintOnJPEG(std::string_view filename);

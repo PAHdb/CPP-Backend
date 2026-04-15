@@ -88,6 +88,27 @@ void Canvas::paintOnPostscript(std::string_view filename) {
   paint();
 }
 
+void Canvas::paintOnPDF(std::string_view filename) {
+
+  _plstream = std::make_unique<plstream>();
+
+  _plstream->sdev("pdfcairo");
+
+  std::string f(filename);
+
+  _plstream->sfnam(f.append(".pdf").c_str());
+
+  _plstream->spause(false);
+
+  _plstream->spage(0.0, 0.0, _size.at(0), _size.at(1), 0.0, 0.0);
+
+  //_plstream->sdiori(1);
+
+  _plstream->setopt("aspect", "1");
+
+  paint();
+}
+
 void Canvas::paintOnPNG(std::string_view filename) {
 
   _plstream = std::make_unique<plstream>();

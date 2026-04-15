@@ -1380,6 +1380,10 @@ int main(const int argc, const char *argv[], char ** /* envp */) {
     canvas.paintOnPostscript(parameters.getOutputFilename());
   }
 
+  if (parameters.isPDF()) {
+    canvas.paintOnPDF(parameters.getOutputFilename());
+  }
+
   try {
 
     pahdb.setProgress(100.0);

@@ -140,6 +140,8 @@ void Parameters::parse(const int argc, const char *argv[]) {
     TCLAP::SwitchArg postscript("", "postscript", "Output to a Postscript file",
                                 _cmdline, false);
 
+    TCLAP::SwitchArg pdf("", "pdf", "Output to a PDF file", _cmdline, false);
+
     _cmdline.parse(argc, argv);
 
     _database = database.getValue();
@@ -444,6 +446,8 @@ void Parameters::parse(const int argc, const char *argv[]) {
     _jpeg = jpeg.getValue();
 
     _postscript = postscript.getValue();
+
+    _pdf = pdf.getValue();
   } catch (const TCLAP::ArgException &e) {
 
     throw(Exception(e.what()));
